@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="h1">Hello h1 tag</h1>
+
+    <div id="main">
+        wew
+    </div>
+
+    <!-- internal javascript -->
+    <script>
+        // print
+        console.log("hello this javascript");
+
+        // body DOM :- document object model
+        document.write("Hello javascript");
+
+        // selector 
+        var h1_tag = document.getElementById("h1");
+        console.log(h1_tag)
+        // dom change (method)
+        // Text 
+        h1_tag.innerText = "<p>Hello this javascript<p>"
+
+        var div =  document.getElementById("main")
+        console.log(div)
+
+        // Html retrun(allow)
+        div.innerHTML = "<h2>hello this js</h2>"
+
+    </script>
+</body>
+</html>

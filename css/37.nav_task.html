@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            background-color: lightcoral;
+        }
+        ul li{
+           
+            display: inline-block;
+            padding: 10px;
+           
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        ul li:hover{
+            background-color: black;
+            color: white;
+        }
+        .dropdown{
+            display: none;
+        }
+        ul li:hover .dropdown{
+            display: block;
+            position: absolute;
+            margin-left: -0.20cm;
+            margin-top: 0.20cm;
+        }
+        .dropdown ul{
+            margin: 0;
+            padding: 0;
+        }
+        .dropdown ul li{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>    
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href=""> Women's wear</a>
+            <div class="dropdown">
+                <ul>
+                    <li><a href="">clothe's</a></li>
+                    <li><a href=""> Wallet's</a></li>
+                    <li><a href="">shoes</a></li>
+                    <li><a href="">watch</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Help</a></li>
+    </ul>
+   
+</body>
+</html>

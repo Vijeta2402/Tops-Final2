@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1">Hello This Code</h1>
+    <button onclick="chnagedata()">Change data</button>
+
+    <script>
+        function chnagedata(){
+            let h1_tag = document.getElementById("h1")
+            h1_tag.innerText = "Hello this javascript";
+            // javascript css
+            h1_tag.style.color = "red"
+            h1_tag.style.background = "blue"
+            h1_tag.style.padding = "40px"
+            h1_tag.style.fontSize = "50px"
+        }
+        
+    </script>
+</body>
+</html>

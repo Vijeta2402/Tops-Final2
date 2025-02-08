@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav li:first-child{
+            background-color: red;
+        }
+        .nav li:last-child{
+            background-color: aquamarine;
+        }
+        .nav li:nth-child(5){
+            background-color: blue;
+        }
+        .man li:nth-child(odd){
+            background-color: blueviolet;
+        }
+        .man li:nth-child(even){
+            background-color: lawngreen;
+        }
+        .main{
+            height: 200px;
+            width: 200px;
+            border: 2px solid;
+            transition: .5s;
+        }
+        .main:hover{
+            background-color: green;
+            border-radius: 50%;
+            transform: translate(100px,100px);
+        }
+        input:focus{
+            background-color: brown;
+            color: aqua;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!--: :- psudo class
+    :: :-psudo element-->
+    <ul class="nav">
+        <li>One</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+        <li>five</li>
+        <li>six</li>
+    </ul>
+    <ul class="man">
+        <li>One</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+        <li>five</li>
+        <li>six</li>
+    </ul>
+    <div class="main">
+
+    </div>
+    <form action="">
+        <input type="text" name="" id="">
+    </form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            height:200px;
+            width: 200px;
+            border: 2px solid;
+            margin: 200px;
+           
+            background :url("https://tse3.mm.bing.net/th?id=OIP.Jek3CDQGyU5V2g3mChz8wQHaE-&pid=Api&P=0&h=220")
+            
+           /*  background-repeat: no-repeat;*/
+           /* background-size: 60% 60%;*/
+        }
+        .left{
+            height: 200px;
+            width: 200px;
+            background-color: rgba(0,0,0,0.2);
+            transform: translate(100%,-100%);
+            transition: 0.2s;
+        }
+        .main:hover .left{
+            transform: translate(0%,0%);
+        }
+        .right{
+            height: 200px;
+            width: 200px;
+            background-color: rgba(0,0,0,0.2);
+            transform: translate(-100%,0%);
+            transition: 0.2s;  
+        }
+        .main:hover .right{
+            transform: translate(0%,-100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="main" >
+    
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+</body>
+</html>

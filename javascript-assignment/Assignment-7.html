@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Operators Example</title>
+</head>
+<body>
+
+    <h1>Check Conditions</h1>
+    <label for="a">Enter value for a:</label>
+    <input type="number" id="a">
+    <br>
+    <label for="b">Enter value for b:</label>
+    <input type="number" id="b">
+    <br>
+    <button onclick="checkConditions()">Check</button>
+
+    <div id="result"></div>
+
+    <script>
+        function checkConditions() {
+            // Get values from input fields
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+
+            // Use logical operators to check conditions and display result
+            const result = (a > 10 && b < 5) ? "Both conditions are true." : "One or both conditions are false.";
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+
+</body>
+</html>

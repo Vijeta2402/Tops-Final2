@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            height: 150px;
+            width: 300px;
+            gap: 20px;
+            position: relative;
+            /*margin-top: 100px;*/
+         }
+        .main .item img {
+          margin-top: 30px;
+          width: 200px;
+         
+        }
+        .main .item{
+            
+            background-color: aliceblue;
+            padding: 20px;
+           
+        }
+        .main .item h2{
+            font-weight: 500px;
+            font-size: large;
+        }
+        .main .item.price{
+            font-size: small;
+        }
+       .main .item button{
+        background-color: red;
+        color: white;
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        cursor: pointer;
+        }
+       .main .item #new{
+        display: flex;
+        /* row  */
+        /* flex-direction: column; */
+        flex-direction: row-reverse; 
+         
+       }
+          
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="item">
+            <img src="https://p.w3layouts.com/demos_new/template_demo/20-06-2017/elite_shoppy-demo_Free/1660570665/web/images/m7.jpg">
+            <h2>Name Product</h2>
+            <div class="price">$200 </div>
+            <div>
+            <button id="addcart">ADD TO CART</button></div>
+            <div>
+            <button id="new">new</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

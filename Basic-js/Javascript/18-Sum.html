@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- event base :- -->
+     <!-- 1) keyboard 
+     2) mouse :- onlclick ,onsumbit
+     3) windows -->
+ 
+        <div>
+            <label for="">Number 1:-</label>
+            <input type="text" placeholder="Enter your num1" id="num1">
+        </div>
+        <div>
+            <label for="">Number 2:-</label>
+            <input type="text" placeholder="Enter your num2" id="num2">
+        </div>
+        <div>
+            <button onclick="add()">Add</button>
+        </div>
+
+
+
+    <script>
+        num1 = document.getElementById("num1")
+        num2 = document.getElementById("num2")
+
+        // function add(){
+        //     let sum = parseInt(num1.value) + parseInt(num2.value)
+        //     console.log(sum)
+        // }
+
+        function add(){
+            let sum = parseFloat(num1.value) + parseFloat(num2.value)
+            console.log(sum)
+            document.write("sum=>",sum)
+        }
+       
+
+        
+    </script>
+</body>
+</html>

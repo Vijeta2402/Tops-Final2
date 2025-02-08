@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*.nav li::first-letter{
+            background-color: brown;
+        }*/
+        .nav li::before{
+               content:"A";
+        }
+        .nav li::first-line{}
+            
+        
+        .nav li::after{
+            content: "D";
+        }
+        
+        .main::first-line{
+            background-color: blueviolet;
+        }
+        .main::selection{
+            background-color: brown;
+            color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <!--: :-->
+
+    <ul class="nav">
+        <li>One</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+        <li>five</li>
+        <li>six</li>
+
+    </ul>
+    <div class="main">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet sed recusandae nostrum assumenda aliquam ab repellat corporis id explicabo quisquam!
+        Temporibus aliquam, deleniti labore quia illo dolorem nulla corporis eos?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit similique numquam
+        obcaecati quidem accusantium? Perferendis officiis aliquid quo reiciendis eveniet vitae iusto! Vel maxime quis atque quisquam iusto asperiores quibusdam?
+
+    </div>
+</body>
+</html>

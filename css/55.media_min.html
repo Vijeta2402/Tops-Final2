@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* mobile */
+        .main{
+            height: 200px;
+            background: red;
+            font-size: 16px;
+        }
+        /* tablate */
+        @media only screen and (min-width:576px) {
+            .main{
+                background: blue;
+                font-size: 20px;
+            }
+        }
+        /* min tab */
+        @media only screen and (min-width:768px) {
+            .main{
+                background: lightcoral;
+                font-size: 30px;
+            }
+        }
+        @media only screen and (min-width:992px) {
+            .main{
+                background: lawngreen;
+                font-size: 40px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- min :- 576 (>) 768px >  992 ()  -->
+
+
+    <div class="main">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At reiciendis sed in aliquam, ipsa vel animi, ipsam officiis provident nam sint quisquam sequi modi tenetur libero. Unde accusantium id earum?
+
+    </div>
+</body>
+</html>
