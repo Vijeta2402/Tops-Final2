@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+}
+.row{
+    display:flex;
+    flex-wrap:wrap;
+    
+}
+
+
+/* Mobile 300 - 600 */
+[class*='col-']{
+  width:100%;
+}
+/* tablet 600 - 786 */
+@media only screen and (min-width: 600px) {
+.col-s-1 {width: 8.33%;}
+.col-s-2 {width: 16.66%;}
+.col-s-3 {width: 25%;}
+.col-s-4 {width: 33.33%;}
+.col-s-5 {width: 41.66%;}
+.col-s-6 {width: 50%;}
+.col-s-7 {width: 58.33%;}
+.col-s-8 {width: 66.66%;}
+.col-s-9 {width: 75%;}
+.col-s-10 {width: 83.33%;}
+.col-s-11 {width: 91.66%;}
+.col-s-12 {width: 100%;}
+}
+
+/* Desktop/laptop 786 - 1400 */
+@media only screen and (min-width: 786px) {
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+}
+body{
+   
+    background-color: rgb(135, 184, 203);
+   
+}
+.container{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.heading{
+    color: black;
+    text-transform: uppercase;
+}
+hr{
+    background-color: black; height: 1px; border: 0;
+}
+.addressbox{
+    background-color: white;
+    font-weight: 900;
+    margin-top: 10px;
+    padding-left: 10px; 
+}
+.contentbox{
+    background-color: white;
+    padding: 20px;
+    margin-top:27px;
+}
+input{
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    width: 95%;
+    height: 40px;
+    font-size: 15px;
+}
+textarea{
+    width: 97.5%;
+    height: 90px;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-radius:5px;
+    margin-top: 20px;
+   
+}
+button{
+    margin-top: 20px;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 22px;
+    border: none;
+}
+a {
+    color: orange;
+    font-size: 30px;
+    margin: 10px;
+    text-decoration: none;
+
+    }
+  

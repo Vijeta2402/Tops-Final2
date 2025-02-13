@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table cellpadding="7" cellspacing="7" bgcolor="skyblue">
+        <form>
+            <tr>
+                <td>First Name</td>
+                <td ><input type="text" pattern="[A-Za-z]" maxlength="30"></td>
+                
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" pattern="[A-Za-z]" maxlength="30"></td>
+               
+            </tr>
+            <tr>
+                <td>Email Id</td>
+                <td><input type="Email Id" pattern="[A-Za-z0-9]+@+[A-Za-z]+.+[A-Za-z]{2,3}" required></td>
+            </tr>
+            <tr>
+                <td>Mobile Number</td>
+                <td><input type="tel" pattern="[0-9]{10}" maxlength="10"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="radio" name="Gender">Male <input type="radio" name="Gender">Female</td>
+                
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td>
+                    <select>
+                     <option>Day</option>
+                     <option>1</option>
+                     <option>2</option>
+                     <option>3</option>
+                    </select>
+                    <select>
+                     <option>Month</option>
+                     <option>Jan</option>
+                     <option>Fab</option>
+                     <option>Mar</option>
+                    </select>
+                    <select>
+                     <option>Year</option>
+                     <option>1990</option>
+                     <option>1991</option>
+                     <option>1992</option>
+                    </select>
+                    </td>            
+            </tr> 
+            <tr>
+                <td>Address</td>
+                <td><textarea name="address" required></textarea></td>
+            </tr> 
+            <tr>
+                <td>City</td>
+                <td><input type="text" pattern="[A-Za-z]" maxlength="10">
+                </td>
+            </tr>
+            <tr>
+                <td>Pin Code</td>
+                <td><input type="tel" pattern="[0-9]{6}" maxlength="6" required></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td><input type="text" pattern="[A-Za-z]" maxlength="20" required></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td><input type="text" pattern="[A-Za-z]" maxlength="20" required></td>
+            </tr>
+            <tr>
+                <td>Hobbies</td>
+                <td><input type="checkbox" name="hobby" size="" >Drawing <input type="checkbox" name="hobby" size="">Singing <input type="checkbox" name="hobby" size="">Dancing <input type="checkbox" name="hobby" size="">Sketching<br>
+                 <input type="checkbox" name="hobby">Others <input type="text" placeholder="Ex-Teaching"></td>
+            </tr>
+            <tr>
+                <td>Qualification</td>
+                <td><input type="checkbox" name="xyz" size="">High School(10th) <br>
+                    <input type="checkbox" name="xyz" size="">Higher School(12th)  <br>
+                   <input type="checkbox" name="xyz" size="">Graduation (bachelor)<br>
+                   <input type="checkbox" name="xyz" size=""> Post Graduation(masters)<br>
+                   <input type="checkbox" name="xyz" size=""> Phd           
+                </td>
+            </tr>
+            <tr>
+                <td>Courses<br>Applied For</td>
+                <td><input type="radio" name="wxy" size="">BCA(bachelor of computer science)<br>
+                <input type="radio" name="wxy" size="">B.COM(Bachelor of commerce)<br>
+                <input type="radio" name="wxy" size="">B.SC(Bachelor of Science)<br>
+                <input type="radio" name="wxy" size="">BA(Bachelor of Arts)<br>
+                <input type="radio" name="wxy" size="">MCA<br>
+                <input type="radio" name="wxy" size="">M.COM<br>
+                <input type="radio" name="wxy" size="">M.SC<br>
+                <input type="radio" name="wxy" size="">MA
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                <input type="submit" placeholder="Submit"><input type="Reset" placeholder="Reset">
+                </td>
+            </tr>
+        </form>
+    </table>
+   
+</body>
+</html>
