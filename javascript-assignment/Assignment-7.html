@@ -8,27 +8,21 @@
 <body>
 
     <h1>Check Conditions</h1>
-    <label for="a">Enter value for a:</label>
-    <input type="number" id="a">
-    <br>
-    <label for="b">Enter value for b:</label>
-    <input type="number" id="b">
-    <br>
-    <button onclick="checkConditions()">Check</button>
+<script>
+    let a = 12;
+   let b = 3;
 
-    <div id="result"></div>
+if (a > 10 && b < 5) {
+    console.log("Both conditions are true.");
+} else {
+    console.log("At least one condition is false.");
+}
 
-    <script>
-        function checkConditions() {
-            // Get values from input fields
-            const a = parseFloat(document.getElementById('a').value);
-            const b = parseFloat(document.getElementById('b').value);
 
-            // Use logical operators to check conditions and display result
-            const result = (a > 10 && b < 5) ? "Both conditions are true." : "One or both conditions are false.";
-            document.getElementById('result').innerText = result;
-        }
-    </script>
+</script>
+
+
+
 
 </body>
 </html>

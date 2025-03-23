@@ -1,0 +1,37 @@
+
+<div align="center">
+    <h3>enter students</h3>
+    <input type="text" id="names">
+    <button onclick="data()">Add</button>
+    <table id="list" border="1">
+
+    </table>
+
+</div>
+
+
+<script>
+    var list= document.getElementById('list');
+    var names=[];
+    function data(){
+        var value=document.getElementById('names').value;
+        names.push(value);   //Add in last value in arr
+        for(var i=0; i<names.length;i++)
+          
+        
+
+        {
+                var html=`<tr>
+                    <td> ${names[i] } </td>
+                    </tr>`;
+            }
+            
+            list.insertAdjacentHTML("beforeend",html);
+       }
+
+
+     
+
+
+
+</Script>

@@ -1,0 +1,32 @@
+<script>
+
+class abc
+{
+	constructor(a,b){  
+		this.a=a;
+		this.b=b;		
+	}
+	sum()
+	{
+		var sum;
+		sum=this.a+this.b;
+		document.write(sum + "<br>");
+	}
+}
+class xyz extends abc
+{
+	constructor(a,b){
+		super(a,b)
+	}
+	multi()
+	{
+		var multi;
+		multi=this.a*this.b;
+		document.write(multi + "<br>");
+	}
+}
+var obj=new xyz(10,8);
+obj.sum();
+obj.multi();
+</script>
+<!--super is used for one class to another class-->
