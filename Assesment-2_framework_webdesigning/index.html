@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Interval Calculator</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- DateTimePicker CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Moment.js for date calculations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <!-- DateTimePicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    
+    <style>
+        .result-box {
+            background-color: #337ab7;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="container mt-5 ">
+
+    <h2>Date Interval Calculator</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <label for="start-date">From:</label>
+            <input type="text" id="start-date" class="form-control datetimepicker">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="end-date">To:</label>
+            <input type="text" id="end-date" class="form-control datetimepicker">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="calculate" class="btn btn-primary mt-4">Calculate</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="output" class="result-box" style="display: none;">
+               <p id="interval-text"></p>
+               <p id="years"></p>
+               <p id="months"></p>
+               <p id="weeks"></p>
+               <p id="days"></p>
+             </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // Initialize DateTimePickers
+            $('.datetimepicker').datetimepicker({
+                format: 'YYYY-MM-DD'
+            });
+
+            // Calculate Date Interval
+            $('#calculate').click(function () {
+                let startDate = moment($('#start-date').val(), 'YYYY-MM-DD');
+                let endDate = moment($('#end-date').val(), 'YYYY-MM-DD');
+
+                if (!startDate.isValid() || !endDate.isValid()) {
+                    alert("Please select valid dates!");
+                    return;
+                }
+
+                let diffDays = endDate.diff(startDate, 'days');
+                let diffWeeks = endDate.diff(startDate, 'weeks');
+                let diffMonths = endDate.diff(startDate, 'months');
+                let diffYears = endDate.diff(startDate, 'years');
+
+                $('#interval-text').html(`Date interval between <b>${startDate.format('MM/DD/YYYY')}</b> and <b>${endDate.format('MM/DD/YYYY')}</b>`);
+                $('#years').text(`In years: ${diffYears}`);
+                $('#months').text(`In months: ${diffMonths}`);
+                $('#weeks').text(`In weeks: ${diffWeeks}`);
+                $('#days').text(`In days: ${diffDays}`);
+                
+
+                $('#output').show();
+            });
+        });
+    </script>
+</body>
+</html>
