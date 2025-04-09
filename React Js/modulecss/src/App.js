@@ -1,5 +1,6 @@
-import Class_component from "./Component/Class_component";
-import Func_component from "./Component/Func_component";
+//import React_css from "./CSS/React_css";
+import Module_css from "./Module_css/Module_css";
+
 
 /*
 Download & use Extension in React 
@@ -14,16 +15,16 @@ rfce : create function component
 rce : create class component
 rcc :  create class component with export
 rcep  : create class component with proptype
-*/
 
+*/
 function App() {
   return (
     <div className="container mt-5"> 
       {
-        // Component Types
+        // css
+        //<React_css/>
+     <Module_css/>
 
-       <Func_component/>
-        //<Class_component/>
       }
      
     </div>

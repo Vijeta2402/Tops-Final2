@@ -11,20 +11,22 @@ The differences are so minor that you will probably never need to use a Class co
 
 Even though Function components are preferred, 
 there are no current plans on removing Class components from React.
+*/
 
+import React, { Component } from 'react'
 class Car extends React.Component {
   render() {
-    return <h2>Hi, I am a Car!</h2>;
+    return (<h2>Hi, I am a Car!</h2>)
   }
 }
-  
-*/
+export default Car
+
+
 
 
 
 //rce
-
-import React, { Component } from 'react'
+/*import React, { Component } from 'react'
 
  class Class_component extends Component {
   render() {

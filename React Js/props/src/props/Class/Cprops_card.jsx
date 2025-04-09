@@ -19,7 +19,7 @@ class Car extends React.Component {
 
 import React, { Component } from 'react'
 
-export class Cprops_card extends Component {
+ class Cprops_card extends Component {
     
     render() {
         return (

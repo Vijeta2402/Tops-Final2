@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Cprops_card from './Cprops_card'
 
-export class Class_props extends Component {
+class Class_props extends Component {
     render() {
         return (
             <div className='row'>

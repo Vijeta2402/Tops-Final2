@@ -26,8 +26,8 @@ function App() {
       {
         
         //Props
-        <Func_props/>
-        //<Class_props/>
+        //<Func_props/>
+        <Class_props/>
       }
      
     </div>

@@ -65,10 +65,9 @@ function Main_Jsx() {
 
             <h1 style={{color:"red",backgroundColor:'yellow'}}>Hi i am css</h1>
 
-            <h1 style={myStyle}>Hi i am css with variable</h1>
+            <h1 style={myStyle}>Hi i am css with var</h1>
 
             <h1 className='box'>Hi i am external css</h1>
-            <h1 class='box'>Hi i am external css</h1>
             
             <hr />
 
