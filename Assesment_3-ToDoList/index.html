@@ -1,108 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>To-Do List</title>
+  <meta charset="UTF-8">
+  <title>To-Do List Test</title>
   <style>
     body {
-        font-family: Arial, sans-serif;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #161b22;
-        color: white;
+      background-color: #0d1117;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
     }
+
     .container {
-        background: #0d1117;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-        width: 300px;
-        text-align: center;
+      background-color: #1c1f26;
+      padding: 20px;
+      border-radius: 12px;
+      width: 300px;
     }
-    input {
-        padding: 10px;
-        width: 70%;
-        border-radius: 5px;
-        border: none;
+
+    input[type="text"] {
+      width: 60%;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
     }
+
     button {
-        padding: 10px;
-        background-color: #f39c12;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
+      padding: 9px 15px;
+      background-color: #f4a261;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
     }
+
     ul {
-        list-style: none;
-        padding: 0;
-        margin-top: 15px;
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
     }
+
     li {
-        background: white;
-        color: black;
-        padding: 10px;
-        margin: 5px 0;
-        border-radius: 5px;
+      background-color: #f1f1f1;
+      color: #111;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 8px;
     }
   </style>
 </head>
 <body>
-
-  <h2>To-Do List</h2>
-  <input type="text" id="taskInput" placeholder="Enter task" />
-  <button id="addBtn">Add</button>
-
-  <ul id="taskList"></ul>
+  <div class="container">
+    <input type="text" id="todo-input" placeholder="add new" />
+    <button id="add-btn">Add</button>
+    <ul id="todo-list"></ul>
+  </div>
 
   <script>
-    // Load tasks when page loads
-    window.addEventListener('DOMContentLoaded', loadTasks);
+    const input = document.getElementById("todo-input");
+    const button = document.getElementById("add-btn");
+    const list = document.getElementById("todo-list");
 
-    // Add task on button click
-    document.getElementById("addBtn").addEventListener("click", function () {
-      let task = document.getElementById("taskInput").value.trim();
-      if (task) {
-        let tasks = getCookieTasks();
-        tasks.push(task);
-        document.getElementById("taskInput").value = ""; // Clear input
-        setCookieTasks(tasks);
-        displayTasks(tasks);
+    // 🔄 Load saved todos from cookie on page load
+    window.onload = function () {
+      const cookieData = getCookie("todos");
+      if (cookieData) {
+        const todos = JSON.parse(decodeURIComponent(cookieData));
+        todos.forEach(todo => addToDOM(todo));
+      }
+    };
+
+    // 🧠 Add event listener to button//
+    button.addEventListener("click", () => {
+      const todoText = input.value.trim();
+      if (todoText !== "") {
+        addToDOM(todoText);
+        storeInCookies(todoText);
+        input.value = "";
       }
     });
 
-    // Get tasks from cookie
-    function getCookieTasks() {
-      let match = document.cookie.match(/(?:^|;) ?tasks=([^;]*)/);
-      if (match) {
-        let taskStr = decodeURIComponent(match[1]);
-        return taskStr ? taskStr.split("||") : [];
+    // 🧱 Adds the new item to the DOM
+    function addToDOM(text) {
+      const li = document.createElement("li");
+      li.textContent = text;
+      list.appendChild(li);
+    }
+
+    // 💾 Stores item into cookies
+    function storeInCookies(todo) {
+      let todos = getCookie("todos");
+      todos = todos ? JSON.parse(decodeURIComponent(todos)) : [];
+      todos.push(todo);
+      const expiry = new Date();
+      expiry.setDate(expiry.getDate() + 7); // Valid for 7 days
+      document.cookie = `todos=${encodeURIComponent(JSON.stringify(todos))}; expires=${expiry.toUTCString()}; path=/`;
+    }
+
+    // 🍪 Helper to read a cookie by name
+    
+    function getCookie(name) {
+      const cookieArr = document.cookie.split("; ");
+      for (let i = 0; i < cookieArr.length; i++) {
+        const [key, value] = cookieArr[i].split("=");
+        if (key === name) {
+          return value;
+        }
       }
-      return [];
-    }
-
-    // Save tasks to cookie
-    function setCookieTasks(tasks) {
-      document.cookie = "tasks=" + encodeURIComponent(tasks.join("||")) + "; path=/";
-    }
-
-    // Display tasks
-    function displayTasks(tasks) {
-      let ul = document.getElementById("taskList");
-      ul.innerHTML = "";
-      tasks.forEach(task => {
-        let li = document.createElement("li");
-        li.textContent = task;
-        ul.appendChild(li);
-      });
-    }
-
-    // Load tasks and show them
-    function loadTasks() {
-      let tasks = getCookieTasks();
-      displayTasks(tasks);
+      return null;
     }
   </script>
-
 </body>
 </html>
