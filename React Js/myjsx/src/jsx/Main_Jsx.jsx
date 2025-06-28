@@ -62,8 +62,9 @@ function Main_Jsx() {
             }
 
             <hr />
+            <h2 style={{color:"yellow",backgroundColor:"blue"}}>Hill inline css</h2>
 
-            <h1 style={{color:"red",backgroundColor:'yellow'}}>Hi i am css</h1>
+            <h1 style={{color:"blue",backgroundColor:'yellow'}}>Hi i am css</h1>
 
             <h1 style={myStyle}>Hi i am css with var</h1>
 

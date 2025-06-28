@@ -1,3 +1,4 @@
+
 import Class_component from "./Component/Class_component";
 import Func_component from "./Component/Func_component";
 
@@ -22,7 +23,7 @@ function App() {
       {
         // Component Types
 
-       <Func_component/>
+      <Func_component/>
         //<Class_component/>
       }
      

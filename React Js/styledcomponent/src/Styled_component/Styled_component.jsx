@@ -32,4 +32,5 @@ function styled_component(){
         </div>
     )
 }
-export default styled_component
+export default styled_
+component

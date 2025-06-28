@@ -1,30 +1,27 @@
-import Home from "./Website/pages/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Index from "./Routing/pages/Index";
+import Header from "./Routing/component/Header";
+import Footer from "./Routing/component/Footer";
+import Properties from "./Routing/pages/Properties";
+import Properties_details from "./Routing/pages/Properties_details";
+import Contact from "./Routing/pages/Contact";
+import SignIn from "./Routing/pages/SignIn";
+import SignUp from "./Routing/pages/SignUp";
 
-
-
-/*
-Download & use Extension in React 
-
-es7 + react
-JavaScript and React/Redux snippets in ES7+ with Babel plugin features for VS Code
-Short code for program 
-imr    : import react
-imrc : import react with component
-
-rfce : create function component
-rce : create class component
-rcc :  create class component with export
-rcep  : create class component with proptype
-
-*/
 function App() {
   return (
-    <div className="container mt-5"> 
-      {
-        //website
-        <Home/>
-      }
-     
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<> <Header/> <Index/> <Footer/></>}></Route>
+          <Route path="/properties" element={<> <Header/> <Properties/> <Footer/></>}></Route>
+          <Route path="/property-details" element={<> <Header/> <Properties_details/> <Footer/></>}></Route>
+          <Route path="/contact" element={<> <Header/> <Contact/> <Footer/></>}></Route>
+          <Route path="/Sign-In" element={<> <Header/> <SignIn/> <Footer/></>}></Route>
+          <Route path="/Sign-Up" element={<> <Header/> <SignUp/> <Footer/></>}></Route>
+          {/* Add more routes as needed */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

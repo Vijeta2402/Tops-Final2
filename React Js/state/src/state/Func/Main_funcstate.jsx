@@ -35,7 +35,7 @@ function Main_funcstate() {
     isImage: true
   });
 
-  const [email,setEmail]=useState("raj@gmail.com");
+  const [email,setEmail]=useState("jaiswalvijeta1@gmail.com");
 
 
   const plus = () => {
@@ -69,7 +69,7 @@ function Main_funcstate() {
       <hr />
       <br />
 
-      <button onClick={()=>setEmail("raj@yahho.com")}>Change</button>
+      <button onClick={()=>setEmail("jaiswalsruti432@gmail.com")}>Change</button>
       <h1>My email is :{email}</h1>
       
       

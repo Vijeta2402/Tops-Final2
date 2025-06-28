@@ -14,7 +14,6 @@ function Fprops_card({img,title,description}) {
         </div>
     )
 }
-
 export default Fprops_card
 
 
