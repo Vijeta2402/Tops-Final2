@@ -13,10 +13,9 @@ function Counter() {
       <h2>Counter</h2>
       <p style={{ fontSize: '24px' }}>Current Count: {count}</p>
       <button onClick={counter} style={{ padding: '10px 20px', fontSize: '16px' }}>
-        Increment
+      Increment
       </button>
     </div>
-  );
+  )
 };
-
 export default Counter;
