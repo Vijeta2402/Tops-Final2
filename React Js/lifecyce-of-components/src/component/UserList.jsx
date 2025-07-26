@@ -1,29 +1,28 @@
 {/*In React class components, lifecycle methods are special methods that get called at specific points in a component’s life. These allow you to run code at particular times, like when a component is created, updated, or destroyed.
 
-📘 The Lifecycle Phases of a React Class Component
-A React class component goes through three main lifecycle phases:
+The Lifecycle Phases of a React Class Component A React class component goes through three main lifecycle phases: 
 
 1. Mounting Phase
 This happens when the component is being inserted into the DOM for the first time.
 
 Lifecycle methods involved:
 
-constructor(): Initializes state and binds methods.
+constructor(): Initializes state and binds methods. 
 
-static getDerivedStateFromProps(): Rarely used, called right before render(), both during mount and update.
+static getDerivedStateFromProps(): Rarely used, called right before render(), both during mount and update.  
 
-render(): Returns JSX to render UI.
+render(): Returns JSX to render UI. 
 
 componentDidMount(): Invoked after the component is mounted. Ideal for AJAX calls, subscriptions, etc.
 
 2. Updating Phase
-This occurs when the component’s state or props change.
+This occurs when the component’s state or props change.  
 
 Lifecycle methods involved:
 
-static getDerivedStateFromProps(): Called before every re-render.
+static getDerivedStateFromProps(): Called before every re-render.   
 
-shouldComponentUpdate(): Lets you decide if a re-render is needed (for performance optimization).
+shouldComponentUpdate(): Lets you decide if a re-render is needed (for performance optimization).    
 
 render(): Re-renders the component.
 

@@ -5,6 +5,8 @@ import Greeting from './Task-4/Greeting';
 import WelcomeMessage from './Task-2/WelcomeMessage';
 import Usercard_row from './Task-5/Usercard_row';
 import Counter from './Task-6/Counter';
+import Button from './Task-7/Button'; // Assuming Button is in Task-7 folder
+import InputForm from './Task-8/InputForm'; // Assuming InputForm is in Task-8 folder
 function App() {
   return (
     <div>
@@ -28,6 +30,13 @@ function App() {
       <Counter/>
       <hr></hr>
       <br></br>
+      <Button/>
+      <br></br>
+      <hr></hr>
+      <br></br>
+      <InputForm />
+      <br></br>
+      <hr></hr>
     </div>
   )
 }

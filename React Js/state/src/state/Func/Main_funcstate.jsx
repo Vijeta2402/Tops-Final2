@@ -57,8 +57,7 @@ function Main_funcstate() {
       <hr />
       <br />
 
-      <button onClick={() => setData({...data, isImage: false })}>Hide</button>
-      <button onClick={() => setData({...data, isImage: true })}>Show</button>
+      
       <button onClick={() =>setData({...data, isImage: !data.isImage })}>Hide/Show</button>
 
       {

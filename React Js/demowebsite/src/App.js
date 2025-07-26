@@ -7,6 +7,14 @@ import Properties_details from "./Routing/pages/Properties_details";
 import Contact from "./Routing/pages/Contact";
 import SignIn from "./Routing/pages/SignIn";
 import SignUp from "./Routing/pages/SignUp";
+import AHeader from "./admin/component/AHeader";
+import AFooter from "./admin/component/AFooter";
+import Dashboard from "./admin/pages/Dashboard";
+import Admin_login from "./admin/pages/Admin_login";
+import Add_categories from "./admin/pages/Add_categories";
+import Manage_categories from "./admin/pages/Manage_categories";
+import Add_properties from "./admin/pages/Add_properties";
+import Manage_properties from "./admin/pages/Manage_properties";
 
 function App() {
   return (
@@ -19,7 +27,16 @@ function App() {
           <Route path="/contact" element={<> <Header/> <Contact/> <Footer/></>}></Route>
           <Route path="/Sign-In" element={<> <Header/> <SignIn/> <Footer/></>}></Route>
           <Route path="/Sign-Up" element={<> <Header/> <SignUp/> <Footer/></>}></Route>
-          {/* Add more routes as needed */}
+         
+           <Route path="/admin-login" element={<>  <Admin_login/> <AFooter/></>}></Route>
+          <Route path="/dashboard" element={<> <AHeader/> <Dashboard/> <AFooter/></>}></Route>
+
+          <Route path="/add_categories" element={<> <AHeader/> <Add_categories/> <AFooter/></>}></Route>
+          <Route path="/manage_categories" element={<> <AHeader/> <Manage_categories/> <AFooter/></>}></Route>
+
+          <Route path="/add_properties" element={<> <AHeader/> <Add_properties/> <AFooter/></>}></Route>
+          <Route path="/manage_properties" element={<> <AHeader/> <Manage_properties/> <AFooter/></>}></Route>
+
         </Routes>
       </BrowserRouter>
     </div>

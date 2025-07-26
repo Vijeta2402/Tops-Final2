@@ -1,0 +1,69 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "name": "demo",
+      "email": "demo@gmail.com",
+      "password": "123456",
+      "mobile": 9722041171,
+      "status": "Unblock"
+    },
+    {
+      "id": "2",
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "123456",
+      "mobile": 9722041171,
+      "status": "Unblock"
+    }
+  ],
+  "categories": [],
+  "properties": [
+    {
+      "id": "1",
+      "cate_id": 1,
+      "name": "Valley Penthouse",
+      "bedroom": "4",
+      "bathroom": "4",
+      "floor": "2",
+      "area": "174sft",
+      "image": "ValleyAppartment.jpg"
+    },
+    {
+      "id": "2",
+      "cate_id": 3,
+      "name": "Radhey Penthouse",
+      "bedroom": "3",
+      "bathroom": "2",
+      "floor": "1",
+      "area": "135sft",
+      "image": "RadheyPenthouse.jpg"
+    },
+    {
+      "id": "3",
+      "cate_id": 3,
+      "name": "Krishana Penthouse",
+      "bedroom": "3",
+      "bathroom": "2",
+      "floor": "1",
+      "area": "135sft",
+      "image": "KrishanaPenthouse.jpg"
+    }
+  ],
+  "contact": [
+    {
+      "id": "1",
+      "name": "demo",
+      "email": "demo@gmail.com",
+      "mobile": 9722041171,
+      "message": "Demo inquiry"
+    },
+    {
+      "id": "2",
+      "name": "test",
+      "email": "test@gmail.com",
+      "mobile": 9722041171,
+      "message": "test inquiry"
+    }
+  ]
+}

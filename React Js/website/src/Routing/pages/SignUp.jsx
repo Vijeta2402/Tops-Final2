@@ -8,7 +8,7 @@ function SignUp() {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
-                            
+                             <h3>SignUp Us</h3>
                             <span className="breadcrumb"><a href="#">Home</a>  &gt; Sign Up</span>
                         </div>
                     </div>

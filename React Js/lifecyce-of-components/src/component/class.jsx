@@ -19,10 +19,10 @@ class InnerCounter extends Component {
         <button onClick={this.props.increment}>Increment</button>
       </div>
     );
-  }
+  } 
 }
 
-// Outer component handles showing/hiding the counter
+// Outer component handles showing/hiding the counter 
 class Counter extends Component {
   constructor(props) {
     super(props);

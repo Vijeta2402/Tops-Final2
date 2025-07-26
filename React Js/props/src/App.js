@@ -1,6 +1,6 @@
+import Func_state from "./Hide-Show/Func_state";
+import Call_func from "./Movie_card/Call_func";
 
-import Class_props from "./props/Class/Class_props";
-import Func_props from "./props/Func/Func_props";
 
 
 
@@ -27,7 +27,9 @@ function App() {
         
         //Props
         //<Func_props/>
-        <Class_props/>
+        //<Class_props/>
+        //<Call_func/>
+      <Func_state/>
       }
      
     </div>

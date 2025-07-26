@@ -1,13 +1,17 @@
 import React from 'react';
 import UserList from './component/UserList'; // no need to write .jsx
-import Counter from './component/class';
+
+import Func_life from './Func_lifecycle/Func_life';
 
 function App() {
   return (
     <div className="App">
       {/*<UserList/>*/}
       <h1>React Lifecycle Demo</h1>
-      <Counter />
+      {/*<class />*/}
+      <Func_life />
+      
+
     </div>
   );
 }

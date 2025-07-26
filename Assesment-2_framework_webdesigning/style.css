@@ -1,0 +1,65 @@
+/* Enable hover dropdown only on large screens */
+/* Basic styles */
+.navbar {
+  background: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+.nav-item {
+  position: relative;
+}
+.nav-item a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  display: inline-block;
+}
+
+/* Mega menu styling */
+.mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  background: white;
+  padding: 20px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  border-top: 3px solid black;
+}
+
+.mega-menu .mega-column {
+  float: left;
+  width: 20%;
+}
+
+.mega-menu .mega-column h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.mega-menu .mega-column a {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Show mega menu on hover ONLY for hovered item */
+.has-mega:hover .mega-menu {
+  display: block;
+}
+
+/* Clear float */
+.mega-menu::after {
+  content: '';
+  display: block;
+  clear: both;
+}

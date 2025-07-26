@@ -44,6 +44,7 @@
   .navbar{
     background-color: white;
   }
+  
   .menu{
     font: inherit;
   }
@@ -78,3 +79,29 @@
     text-decoration: none;
     color: black;
   }
+    .sport-card img {
+      height: 350px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .sport-card {
+      text-align: center;
+      border: none;
+      background-color: transparent;
+    }
+    .card-title {
+      font-weight: bold;
+      color: white;
+      background: rgba(116, 107, 107, 0.6);
+      padding: 10px 0;
+      margin-top: -50px;
+      position: relative;
+    }
+    .card-overlay {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+.card-overlay img{
+  width: 100%;
+}

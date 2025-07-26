@@ -1,15 +1,6 @@
-/*
-Props are arguments passed into React components.
-
-Props are passed to components via HTML attributes.
-props stands for properties.
-
-
-*/
-
 import React from 'react'
 
-function Props_func({img,title,desc}) {
+function Card_func({img,title,desc}) {
     return (
         <div className='col-md-3'>
             <div className="card" style={{ width: '100%' }}>
@@ -24,4 +15,4 @@ function Props_func({img,title,desc}) {
     )
 }
 
-export default Props_func
+export default Card_func

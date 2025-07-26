@@ -1,5 +1,5 @@
 import React from "react";
-
+import Main from "Styled_component/Main";
 
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <div> 
       {
       
-       <styled_component/>
+       <Main/>
       }
      
     </div>

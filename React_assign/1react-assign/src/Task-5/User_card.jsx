@@ -12,17 +12,6 @@ const cardStyle = {
   backgroundColor: '#f9f9f9',
 };
 
-const headingStyle = {
-  fontSize: '1.5rem',
-  marginBottom: '10px',
-  color: '#333',
-};
-
-const textStyle = {
-  fontSize: '1rem',
-  margin: '5px 0',
-  color: '#555',
-};
 
 const User_card = ({ name, age, location }) => {
   return (
