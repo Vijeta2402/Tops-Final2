@@ -1,92 +1,86 @@
+import axios from 'axios';
 import React, { useState } from 'react'
-function Form_handeling() {
+import { toast } from 'react-toastify';
+import swal from 'sweetalert'; 
 
-    const [formvalue, setFormhandel] = useState({
-        id:"",
-        name: "",
-        email: "",
-        password: ""
-    })
+function Add_categories() {
+
+
+    const [formdata, setFormdata] = useState({
+        id: "",
+        cate_name: "",
+        cate_image: ""
+    });
 
     const changeHandel = (e) => {
-        const { name, value } = e.target;
-        setFormhandel((prev) => ({...prev, [name]: value }));
-        setFormhandel((prev)=>({...prev,id:new Date().getTime().toString()}));
-        console.log(formvalue);
+        setFormdata({ ...formdata, id: new Date().getTime().toString(), [e.target.name]: e.target.value });
+        console.log(formdata);
     }
 
-    const [data, setData] = useState([]);
-    const submitHandel = (e) => {
+    function validation() {
+            let ans = true;
+            if (formdata.cate_name == "") {
+                toast.error('Category Name Field is required');
+                ans = false;
+            }    
+            if (formdata.cate_image == "") {
+                toast.error('Category Image URL Field is required');
+                ans = false;
+            }
+           
+            return ans;
+        }
+    
+
+    const submitHandel = async (e) => {
         e.preventDefault();
-        setData([...data,formvalue]);
-         setFormhandel({ ...formvalue,name:"",email:"",password:"" });
+        if(validation())
+        {
+            const res = await axios.post(`http://localhost:3000/categories`, formdata);
+            swal("Good job!", "Category added Success!", "success");
+            setFormdata({ ...formdata, cate_name: "", cate_image: ""});
+        }
+        
     }
 
-    const deleteHandel = (id) => {
-        var filterdata= data.filter((value,index,arr)=> { return value.id!=id});
-        setData(filterdata);
-    }
-
-
-
+    
     return (
         <div>
-            <div className="container mt-3">
-                <h2>User Register</h2>
-                <form action="" onSubmit={submitHandel}>
-                    <div className="mb-3 mt-3">
-                        <label htmlFor="text">Name:</label>
-                        <input type="text" onChange={changeHandel} value={formvalue.name} className="form-control" id="text" placeholder="Enter Name" name="name" />
-                    </div>
-                    <div className="mb-3 mt-3">
-                        <label htmlFor="email">Email:</label>
-                        <input type="email" onChange={changeHandel} value={formvalue.email} className="form-control" id="email" placeholder="Enter email" name="email" />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="pwd">Password:</label>
-                        <input type="password" onChange={changeHandel} value={formvalue.password} className="form-control" id="pwd" placeholder="Enter password" name="password" />
-                    </div>
 
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                </form>
-            </div>
 
-            <div className="container mt-3">
-                <h2>User Manage</h2>
-                <table className="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>ID</th>    
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            data.map((value, index, entarr) => {
+            <div className="featured section">
+                <div className="container">
+                    <div className="row">
 
-                                return (
-                                    <tr>
-                                        <th>{value.id}</th>      
-                                        <td>{value.name}</td>
-                                        <td>{value.email}</td>
-                                        <td>{value.password}</td>
-                                        <td>
-                                            <button onClick={()=>deleteHandel(value.id)} className='btn btn-danger'>Delete </button>
-                                        </td>
-                                    </tr>
-                                )
-                            })
-                        }
-                    </tbody>
-                </table>
+                        <div className="col-lg-12">
+                            <div className="section-heading">
+                                <h6>| Categories</h6>
+                                <h2>Add Categories</h2>
+                            </div>
+
+                            <div className="container mt-3">
+
+                                <form method="post" onSubmit={submitHandel}>
+                                    <div className="form-floating mb-3 mt-3">
+                                        <input type="text" onChange={changeHandel} value={formdata.cate_name} className="form-control"  placeholder="Enter Categories Name" name="cate_name" />
+                                        <label htmlFor="email">Categories Name</label>
+                                    </div>
+                                    <div className="form-floating mt-3 mb-3">
+                                        <input type="url" onChange={changeHandel} value={formdata.cate_image} className="form-control" id="pwd" placeholder="Enter Categories image url" name="cate_image" />
+                                        <label htmlFor="pwd">Categories URL</label>
+                                    </div>
+                                    <button type="submit" className="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
         </div>
-
     )
 }
 
-export default Form_handeling
+export default Add_categories

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Booking() {
+function View_booking() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function Booking() {
   )
 }
 
-export default Booking
+export default View_booking

@@ -1,7 +1,17 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import swal from 'sweetalert';
 
 function AHeader() {
+
+    const redirect = useNavigate();
+    const logout = () => {
+        localStorage.removeItem('a_name');
+        localStorage.removeItem('a_email');
+        swal("Good job!", "Admin Logout Success!", "success");
+        redirect('/admin-login');
+    }
+
     return (
         <div>
             {/* ***** Preloader Start ***** */}
@@ -14,6 +24,16 @@ function AHeader() {
                             <ul className="info">
                                 <li><i className="fa fa-envelope" /> info@company.com</li>
                                 <li><i className="fa fa-map" /> Sunny Isles Beach, FL 33160</li>
+                                {(() => {
+                                    if (localStorage.getItem('a_name')) {
+                                        return (
+                                            <li><i className="fa fa-user" />
+                                                Welcome : {localStorage.getItem('a_name')}
+                                            </li>
+                                        )
+                                    }
+                                })()}
+
                             </ul>
                         </div>
                         <div className="col-lg-4 col-md-4">
@@ -55,16 +75,26 @@ function AHeader() {
                                             <Link class="dropdown-item" to="/manage_properties">Manage Properties</Link>
                                         </div>
                                     </li>
-                                    <li><NavLink to="/property-details">Customer</NavLink></li>
+                                    <li><NavLink to="/manage_customer">Customer</NavLink></li>
                                     <li class="dropdown">
                                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Booking Work</a>
                                         <div class="dropdown-menu">
-                                            <Link class="dropdown-item" to="#">Booking Reoprt</Link>
-                                            <Link class="dropdown-item" to="#">Feedback</Link>
+                                            <Link class="dropdown-item" to="/manage_booking">Booking Reoprt</Link>
+                                            <Link class="dropdown-item" to="/manage_feedback">Feedback</Link>
                                         </div>
                                     </li>
-                                    <li><NavLink to="/admin-login" className="w-100 h-50 p-1"> <span className='fa fa-user'></span> Logout</NavLink></li>
-                                </ul>
+                                    {(() => {
+                                        if (localStorage.getItem('a_email')) {
+                                            return (
+                                                <li><a href={void (0)} onClick={logout} className="w-100 h-50 p-1"> Logout</a></li>
+                                            )
+                                        }
+                                        else {
+                                            return (
+                                                <li><NavLink to="/admin_login" className="w-100 h-50 p-1"> <span className='fa fa-user'></span> Login</NavLink></li>
+                                            )
+                                        }
+                                    })()}                                </ul>
                                 <a className="menu-trigger">
                                     <span>Menu</span>
                                 </a>

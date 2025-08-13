@@ -1,141 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <!-- ! header start -->
-    <header>
-        <div class="header-row">
-            <div class="container">
-                <div class="header-wrapper">
-                    <div class="header-mobile">
-                        <i class="bi bi-list" id="btn-menu"></i>
-                    </div>
-                    <div class="header-left">
-                        <a href="/" class="logo"><img src="images/logo.svg" height="50px" width="60px"></a>
-                    </div>
-                    <div class="header-center" id="sidebar">
-                        <nav class="navigation">
-                            <ul class="menu-list">
-                                <li class="menu-list-item">
-                                    <a href="/" class="menu-link">Home
-                                        <i class="bi bi-chevron-down"></i>
-                                    </a>
-                                    <div class="menu-dropdown-wrapper">
-                                        <ul class="menu-dropdown-content">
-                                            <li><a href="#">Home Clean</a></li>
-                                            <li><a href="#">Home Collection</a></li>
-                                            <li><a href="#">Home Minimal</a></li>
-                                            <li><a href="#">Home Modern</a></li>
-                                            <li><a href="#">Home Parallax</a></li>
-                                            <li><a href="#">Home Strong</a></li>
-                                            <li><a href="#">Home Style</a></li>
-                                            <li><a href="#">Home Unique</a></li>
-                                            <li><a href="#">Home RTL</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="menu-list-item megamenu-wrapper">
-                                    <a href="shop.html" class="menu-link">Shop
-                                        <i class="bi bi-chevron-down"></i>
-                                    </a>
-                                    <div class="menu-dropdown-wrapper">
-                                        <div class="menu-dropdown-megamenu">
-                                            <div class="megamenu-links">
-                                                <div class="megamenu-products">
-                                                    <h3 class="megamenu-product-title">Shop Style</h3>
-                                                    <ul class="megamenu-menu-list">
-                                                        <li><a href="#">Shop Standart</a></li>
-                                                        <li><a href="#">Shop Full</a></li>
-                                                        <li><a href="#">Shop Only Categories</a></li>
-                                                        <li><a href="#">Shop Image Categories</a></li>
-                                                        <li><a href="#">Shop Sub Categories</a></li>
-                                                        <li><a href="#">Shop List</a></li>
-                                                        <li><a href="#">Hover Style 1</a></li>
-                                                        <li><a href="#">Hover Style 2</a></li>
-                                                        <li><a href="#">Hover Style 3</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="megamenu-products">
-                                                    <h3 class="megamenu-product-title">
-                                                        Filter Layout
-                                                    </h3>
-                                                    <ul class="megamenu-menu-list">
-                                                        <li><a href="#">Sidebar</a></li>
-                                                        <li><a href="#">Filter Side Out</a></li>
-                                                        <li><a href="#">Filter Dropdown</a></li>
-                                                        <li><a href="#">Filter Drawer</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="megamenu-products">
-                                                    <h3 class="megamenu-product-title">Shop Loader</h3>
-                                                    <ul class="megamenu-menu-list">
-                                                        <li><a href="#">Shop Pagination</a></li>
-                                                        <li><a href="#">Shop Infinity</a></li>
-                                                        <li><a href="#">Shop Load More</a></li>
-                                                        <li><a href="#">Cart Modal</a></li>
-                                                        <li><a href="#">Cart Drawer</a></li>
-                                                        <li><a href="#">Cart Page</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="megamenu-single">
-                                                <a href="#">
-                                                    <img src="img/mega-menu.jpg" alt="" />
-                                                </a>
-                                                <h3 class="megamenu-single-title">
-                                                    JOIN THE LAYERING GANG
-                                                </h3>
-                                                <h4 class="megamenu-single-subtitle">
-                                                    Suspendisse faucibus nunc et pellentesque
-                                                </h4>
-                                                <a href="#" class="megamenu-single-button btn btn-sm">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="menu-list-item">
-                                    <a href="blog.html" class="menu-link active">Blog
-                                    </a>
-                                </li>
-                                <li class="menu-list-item">
-                                    <a href="contact.html" class="menu-link">Contact</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <i class="bi-x-circle" id="close-sidebar"></i>
-                    </div>
-                    <div class="header-right">
-                        <div class="header-right-links">
-                            <a href="account.html">
-                                <i class="bi bi-person"></i>
-                            </a>
-                            <button class="search-button">
-                                <i class="bi bi-search"></i>
-                            </button>
-                            <a href="#">
-                                <i class="bi bi-heart"></i>
-                            </a>
-                            <div class="header-cart">
-                                <a href="cart.html" class="header-cart-link">
-                                    <i class="bi bi-bag"></i>
-                                    <span class="header-cart-count">0</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ! header end -->
 
-   
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mega Menu</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Icons (optional) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/Style2.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="images/logo.svg" alt="Nivia Logo" height="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#">ALL SPORTS</a></li>
+
+        <li class="nav-item dropdown megamenu">
+          <a class="nav-link dropdown-toggle" href="#" id="apparelDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            APPAREL
+          </a>
+          <div class="dropdown-menu mega-menu" aria-labelledby="apparelDropdown">
+            <div class="row">
+              <div class="col-md-3">
+                <h6 class="dropdown-header">Men</h6>
+                <a class="dropdown-item" href="#">T-shirt</a>
+                <a class="dropdown-item" href="#">Shorts</a>
+                <a class="dropdown-item" href="#">Tracksuit</a>
+                <a class="dropdown-item" href="#">Trackpant</a>
+                <a class="dropdown-item" href="#">Training Bibs</a>
+                <a class="dropdown-item" href="#">Compression</a>
+                <a class="dropdown-item" href="#">Jackets</a>
+                <a class="dropdown-item" href="#">Wind Cheater</a>
+                <a class="dropdown-item" href="#">Sweatshirts</a>
+                <a class="dropdown-item" href="#">Brief</a>
+                <a class="dropdown-item" href="#">Rainwear</a>
+              </div>
+
+              <div class="col-md-3">
+                <h6 class="dropdown-header">Team Wear</h6>
+                <a class="dropdown-item" href="#">Football</a>
+                <a class="dropdown-item" href="#">Basketball</a>
+                <a class="dropdown-item" href="#">Volleyball</a>
+                <a class="dropdown-item" href="#">Cricket</a>
+                <a class="dropdown-item" href="#">Goalkeeper</a>
+                <a class="dropdown-item" href="#">Track & Field</a>
+              </div>
+
+              <div class="col-md-3">
+                <h6 class="dropdown-header">Women</h6>
+                <a class="dropdown-item" href="#">T-shirt</a>
+                <a class="dropdown-item" href="#">Shorts</a>
+                <a class="dropdown-item" href="#">Trackpant</a>
+                <a class="dropdown-item" href="#">Training Bibs</a>
+                <a class="dropdown-item" href="#">Compression</a>
+                <a class="dropdown-item" href="#">Jackets</a>
+                <a class="dropdown-item" href="#">Wind Cheater</a>
+                <a class="dropdown-item" href="#">Sweatshirts</a>
+                <a class="dropdown-item" href="#">Sports Bra</a>
+                <a class="dropdown-item" href="#">Capri/Tights</a>
+              </div>
+
+              <!-- Image column with vertical centering -->
+              <div class="col-md-3 image-col">
+                <img src="images/Apparel_nav.jpg" alt="Apparel" class="img-fluid rounded">
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#">FOOTWEAR</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">FITNESS</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">MUSCLE SUPPORT</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">ACCESSORIES</a></li>
+        <li class="nav-item"><a class="nav-link text-danger" href="#">OFFERS</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">CLUBS</a></li>
+      </ul>
+
+      <div class="d-flex align-items-center me-3">
+        <a href="#" class="me-3"><img src="images/searchimg.png" width="25" /></a>
+        <a href="#" class="me-3"><img src="images/adminimg.png" width="25" /></a>
+        <a href="#"><img src="images/card.png" width="25" /></a>
+      </div>
+    </div>
+  </div>
+</nav>
+  <!---navbar end----->
+  <!-- home-page -->
+  <div class="home">
+    <video autoplay loop muted plays-inline class="backgroung-clip " width="100%">
+      <source src="images/video.MP4">
+
+    </video>
+  </div>
+  <!--end home--->
+  <div class="my-5">
+    <div class="row justify-content-center g-5">
+      <!-- Card 1: Football -->
+      <div class="col-md-2 col-sm-4 col-6">
+        <div class="card sport-card">
+          <div class="card-overlay">
+            <img src="images2/Volleyball_image.jpg" class="card-img-top" alt="Football">
+            <div class="card-title">FOOTBALL</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Basketball -->
+      <div class="col-md-2 col-sm-4 col-6">
+        <div class="card sport-card">
+          <div class="card-overlay">
+            <img src="images2/Football_image.webp" class="card-img-top" alt="Basketball">
+            <div class="card-title">BASKETBALL</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3: Volleyball -->
+      <div class="col-md-2 col-sm-4 col-6">
+        <div class="card sport-card">
+          <div class="card-overlay">
+            <img src="images2/Basketball_image.webp" class="card-img-top" alt="Volleyball">
+            <div class="card-title">VOLLEYBALL</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4: Turf -->
+      <div class="col-md-2 col-sm-4 col-6">
+        <div class="card sport-card">
+          <div class="card-overlay">
+            <img src="images2/Turf_image.jpg" class="card-img-top" alt="Turf">
+            <div class="card-title">TURF</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 5: Badminton -->
+      <div class="col-md-2 col-sm-4 col-6">
+        <div class="card sport-card">
+          <div class="card-overlay">
+            <img src="images2/Badminton_image.webp" class="card-img-top" alt="Badminton">
+            <div class="card-title">BADMINTON</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!------------------------------>
+
+  <div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+      <div>
+        <h2 class="mb-0">Best Sellers</h2>
+        <p class="text-muted">Sports Gear, Footwear & Accessories</p>
+      </div>
+      <a href="#" class="btn btn-outline-dark mt-2 mt-md-0">Explore All</a>
+    </div>
+
+    <div class="row g-3">
+      <!-- Product 1 -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="product-card p-3 bg-white">
+          <img src="https://nivasports.com/cdn/shop/files/NiviaCarboniteRed.jpg" alt="Nivia Carbonite"
+            class="product-image">
+          <p class="product-name mt-3">Nivia Carbonite 7.0 Crest Football Studs</p>
+          <p class="price">₹ 1,049</p>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="product-card p-3 bg-white">
+          <img src="https://nivasports.com/cdn/shop/files/AshtangFootballStud.jpg" alt="Ashtang Studs"
+            class="product-image">
+          <p class="product-name mt-3">Ashtang 2.0 Football Studs</p>
+          <p class="price">₹ 2,499</p>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="product-card p-3 bg-white">
+          <img src="https://nivasports.com/cdn/shop/files/NiviaBasketball.jpg" alt="Basketball Shoes"
+            class="product-image">
+          <p class="product-name mt-3">Nivia Engraver 2.0 Basketball Shoes</p>
+          <p class="price">₹ 1,999 <span class="old-price">₹ 2,999</span> <span class="discount">33% Off</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

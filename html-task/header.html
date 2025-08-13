@@ -1,0 +1,561 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+p {
+	margin-bottom: 0px;
+	font-size: 14px;
+	font-weight: 300;
+	color: #4a4a4a;
+	line-height: 24px;
+}
+a {
+	text-decoration: none!important;
+}
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+}
+
+ul.social-icons li {
+	display: inline-block;
+	margin-right: 3px;
+}
+
+ul.social-icons li:last-child {
+	margin-right: 0px;
+}
+
+ul.social-icons li a {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	line-height: 50px;
+	background-color: #c02929;
+	color: #121212;
+	font-size: 18px;
+	text-align: center;
+	transition: all .3s;
+}
+
+ul.social-icons li a:hover {
+	background-color: #e72e77;
+	color: #fff;
+}
+
+a.filled-button {
+	background-color: #e72e77;
+	color: #fff;
+	font-size: 14px;
+	text-transform: capitalize;
+	font-weight: 300;
+	padding: 10px 20px;
+	border-radius: 5px;
+	display: inline-block;
+	transition: all 0.3s;
+}
+
+a.filled-button:hover {
+	
+	background-color:#e72e77;
+	color: #fff;
+}
+
+.section-heading {
+	text-align: left;
+	margin-bottom: 60px;
+	border-bottom: 1px solid #eee;
+}
+
+.section-heading h2 {
+	font-size: 28px;
+	font-weight: 400;
+	color: #1e1e1e;
+	margin-bottom: 15px;
+}
+
+.products-heading {
+	background-image: url(../images/products-heading.jpg);
+}
+
+.about-heading {
+	background-image: url(../images/about-heading.jpg);
+}
+
+.contact-heading {
+	background-image: url(../images/contact-heading.jpg);
+}
+
+.page-heading {
+	padding: 210px 0px 130px 0px;
+	text-align: center;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.page-heading .text-content h4 {
+	color: #e72e77;
+	font-size: 22px;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 15px;
+}
+
+.page-heading .text-content h2 {
+	color: #fff;
+	font-size: 62px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+#preloader {
+  overflow: hidden;
+  background: #e72e77;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 9999999;
+  color: #fff;
+}
+
+#preloader .jumper {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  position: absolute;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+}
+
+#preloader .jumper > div {
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  position: absolute;
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: jumper 1s 0s linear infinite;
+  animation: jumper 1s 0s linear infinite;
+}
+
+#preloader .jumper > div:nth-child(2) {
+  -webkit-animation-delay: 0.33333s;
+  animation-delay: 0.33333s;
+}
+
+#preloader .jumper > div:nth-child(3) {
+  -webkit-animation-delay: 0.66666s;
+  animation-delay: 0.66666s;
+}
+
+@-webkit-keyframes jumper {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes jumper {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* Header Style */
+header {
+	position: absolute;
+	z-index: 99999;
+	width: 100%;
+	height: 80px;
+	background-color: #e72e77;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+header .navbar {
+	padding: 12px 0px;
+}
+.background-header .navbar {
+	padding: 17px 0px;
+}
+.background-header {
+	top: 0;
+	position: fixed;
+	background-color: #fff!important;
+	box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
+}
+.background-header .navbar-brand h2 {
+	color: #121212!important;
+}
+.background-header .navbar-nav a.nav-link {
+	color: #1e1e1e!important;
+}
+.background-header .navbar-nav .nav-link:hover,
+.background-header .navbar-nav .active>.nav-link,
+.background-header .navbar-nav .nav-link.active,
+.background-header .navbar-nav .nav-link.show,
+.background-header .navbar-nav .show>.nav-link {
+	color:#e72e77!important;
+}
+.navbar .navbar-brand {
+	float: 	left;
+	margin-top: -12px;
+	outline: none;
+}
+.navbar .navbar-brand p {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 22px;
+	font-weight: 370;
+	-webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+}
+
+.navbar .navbar-brand p {
+	font-style: normal;
+	color: white;
+}
+#navbarResponsive {
+	z-index: 999;
+}
+.navbar-collapse {
+	text-align: center;
+}
+/* Ensure mega menu is not clipped */
+.navbar,
+.navbar-collapse {
+  overflow: visible !important;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar .navbar-nav .nav-item {
+	margin: 0px 15px;
+}
+
+/* Apply to both <a> and <span> or NavLink */
+.navbar .navbar-nav .nav-link {
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #fff;
+  transition: all 0.5s;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+/* Works for all nav-link elements, whether <a> or <span> */
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-item.active > .nav-link,
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link.show,
+.navbar .navbar-nav .show > .nav-link {
+  color: #fff;
+  padding-bottom: 25px;
+  border-bottom: 3px solid white;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.navbar .navbar-toggler-icon {
+	background-image: none;
+}
+.navbar .navbar-toggler {
+	border-color: #fff;
+	background-color: #fff;	
+	height: 36px;
+	outline: none;
+	border-radius: 0px;
+	position: absolute;
+	right: 30px;
+	top: 20px;
+}
+.navbar .navbar-toggler-icon:after {
+	content: '\f0c9';
+	color: #e72e77;
+	font-size: 18px;
+	line-height: 26px;
+	font-family: 'FontAwesome';
+}
+
+/* Page Heading Style */
+
+/*----mega menu-------*/
+
+
+
+/* Override any overflow or clipping on ancestor containers */
+.container,
+.navbar-collapse,
+.navbar,
+.mega-parent,
+ul.navbar-nav {
+  overflow: visible !important;
+  position: static !important;
+}
+/*-----------------------------------------*/
+.mega-parent {
+  position: relative;
+}
+
+.mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 39%;
+  width: 800px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  gap: 20px;
+}
+
+/* ✨ Show only on hovering over Services */
+.mega-parent:hover .mega-menu {
+  display: flex;
+}
+
+/* Optional styling */
+.mega-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+   padding: 0 20px;
+}
+
+.destination-container, .makeup-list, .featured-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.destination-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #333;
+}
+
+.destination-img {
+    width: 90px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.featured-img {
+    width: 210px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.mega-column h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #e72e77;
+}
+
+.mega-column a {
+  text-decoration: none;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.mega-column a:hover {
+  color: #e72e77;
+}
+
+.mega-img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+/*----- Responsive Styles----- */
+@media (max-width: 991px) {
+  .mega-menu {
+    position: static;
+    width: 100%;
+    flex-direction: column;
+    padding: 15px;
+    box-shadow: none;
+    display: none;
+  }
+
+  .mega-parent:hover .mega-menu {
+    display: block;
+  }
+
+  .navbar .navbar-nav .nav-item {
+    margin: 5px 0;
+  }
+
+  .navbar-collapse {
+    background-color: #e72e77;
+    padding: 10px;
+  }
+
+  .mega-column {
+    margin-bottom: 15px;
+  }
+  .destination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.destination-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.destination-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+
+  .mega-img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: auto;
+  }
+
+  .navbar .navbar-brand p {
+    font-size: 18px;
+  }
+
+  .navbar .navbar-toggler {
+    top: 15px;
+  }
+}
+/* Booking Dropdown Specific Styling */
+.booking-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 47%;
+    background: #fff;
+    padding: 10px 20px;
+    width: auto;              /* Auto width */
+    min-width: 180px;         /* Minimum readable width */
+    white-space: nowrap;      /* Prevent line breaks */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 999;
+}
+
+/* Prevent full-width mega menu behavior */
+.booking-parent {
+    position: relative;
+}
+
+/* Show on hover */
+.booking-parent:hover .booking-menu {
+    display: block;
+}
+
+/* Items inside booking menu */
+.booking-menu li {
+    list-style: none;
+    padding: 5px 0;
+}
+
+.booking-menu a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+/* Booking Title */
+.booking-menu h4 {
+    margin-bottom: 8px;
+    color: #d63384;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Mobile View - Stack it inline */
+@media (max-width: 991px) {
+    .booking-menu {
+        position: static;
+        display: block;
+        box-shadow: none;
+        width: 100%;
+        padding: 0;
+        white-space: normal;
+    }
+
+    .booking-menu li {
+        padding: 10px 20px;
+    }
+
+    .booking-parent:hover .booking-menu {
+        display: block;
+    }
+}
+/* photos-parent */
+
+
+/* Keep navbar & logo fixed */
+
+
+
+
+/* end photos-parent */

@@ -1,6 +1,6 @@
 /*Create a form with an input field in React. Display the value of the input field dynamically as the user types in it. */
 
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import './CompleteForm.css'; // Import the CSS
 
 function InputForm() {
@@ -28,7 +28,7 @@ function InputForm() {
         <div className="form-group">
           <label>Name:</label>
           <input
-            type="text"
+              type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
@@ -81,5 +81,30 @@ function InputForm() {
   );
 }
 
+export default InputForm;   */
+import React, { useState } from 'react';
+
+function InputForm() {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  return (
+    <div style={{ padding: '20px' }}>
+      <h2>Type Something:</h2>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={handleChange}
+        placeholder="Enter text here"
+      />
+      <p>You typed: <strong>{inputValue}</strong></p>
+    </div>
+  );
+}
+
 export default InputForm;
+
 

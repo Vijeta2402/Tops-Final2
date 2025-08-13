@@ -1,21 +1,22 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate,Link } from 'react-router-dom'
+import swal from 'sweetalert';  
 
 function Header() {
+
+    const redirect=useNavigate();
+    const logout=()=>{
+        localStorage.removeItem('u_id');
+        localStorage.removeItem('u_name');
+        localStorage.removeItem('u_email');
+        swal("Good job!", "Logout Success!", "success");
+        redirect('/');
+    }
+
     return (
         <div>
             {/* ***** Preloader Start ***** */}
-            {/*}
-            <div id="js-preloader" className="js-preloader">
-                <div className="preloader-inner">
-                    <span className="dot" />
-                    <div className="dots">
-                        <span />
-                        <span />
-                        <span />
-                    </div>
-                </div>
-            </div>*/}
+            
             {/* ***** Preloader End ***** */}
             <div className="sub-header">
                 <div className="container">
@@ -24,12 +25,25 @@ function Header() {
                             <ul className="info">
                                 <li><i className="fa fa-envelope" /> info@company.com</li>
                                 <li><i className="fa fa-map" /> Sunny Isles Beach, FL 33160</li>
+
+                                {(() => {
+                                    if (localStorage.getItem('u_name')) {
+                                        return (
+                                           
+                                            <li><i className="fa fa-user" />
+                                                Welcome : {localStorage.getItem('u_name')}
+                                            </li>
+                                           
+                                        )
+                                    }
+                                })()}
+
+
                             </ul>
                         </div>
                         <div className="col-lg-4 col-md-4">
                             <ul className="social-links">
-                                <li><a href="#"><i className="fab fa-facebook" /></a></li>
-                                <li><a href="https://x.com/minthu" target="_blank"><i className="fab fa-twitter" /></a></li>
+                                <li><Link to="/user_profile"><i className="fa fa-user" /> </Link></li>
                                 <li><a href="#"><i className="fab fa-linkedin" /></a></li>
                                 <li><a href="#"><i className="fab fa-instagram" /></a></li>
                             </ul>
@@ -47,6 +61,7 @@ function Header() {
                                 <a href="index.html" className="logo">
                                     <h1>Villa</h1>
                                 </a>
+
                                 {/* ***** Logo End ***** */}
                                 {/* ***** Menu Start ***** */}
                                 <ul className="nav">
@@ -54,7 +69,20 @@ function Header() {
                                     <li><NavLink to="/properties">Properties</NavLink></li>
                                     <li><NavLink to="/property-details">Property Details</NavLink></li>
                                     <li><NavLink to="/contact">Contact Us</NavLink></li>
-                                    <li><NavLink to="/Sign-Up">Sign Up</NavLink></li>
+                                    
+                                    {(() => {
+                                        if (localStorage.getItem('u_id')) {
+                                            return (
+                                                 <li><a href="" onClick={logout} className="w-100 h-50 p-1"> Logout</a></li>
+                                            )
+                                        }
+                                        else
+                                        {
+                                            return(
+                                                 <li><NavLink to="/Sign-In" className="w-100 h-50 p-1"> <span className='fa fa-user'></span> Login</NavLink></li>
+                                            )
+                                        }
+                                    })()}
                                    
                                 </ul>
                                 <a className="menu-trigger">
@@ -73,3 +101,6 @@ function Header() {
 }
 
 export default Header
+
+
+

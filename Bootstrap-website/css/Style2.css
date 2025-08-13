@@ -1,0 +1,59 @@
+/* Mobile & Tablet default */
+/* Mobile and tablet: dropdown static (push content down if needed) */
+.dropdown-menu.mega-menu {
+  width: 900px; /* or whatever width fits your content */
+  padding: 1.5rem;
+}
+
+.dropdown-menu.mega-menu .row {
+  margin: 0;
+}
+
+.dropdown-menu.mega-menu .col-md-3 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.dropdown-menu.mega-menu .image-col {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu.mega-menu .image-col img {
+  max-height: 200px;
+  width: auto;
+}
+
+
+    
+ .sport-card img {
+   height: 350px;
+   width: 100%;
+   object-fit: cover;
+ }
+
+ .sport-card {
+   text-align: center;
+   border: none;
+   background-color: transparent;
+
+ }
+
+ .card-title {
+   font-weight: bold;
+   color: white;
+   background: rgba(116, 107, 107, 0.6);
+   padding: 10px 0;
+   margin-top: -50px;
+   position: relative;
+ }
+
+ .card-overlay {
+   position: relative;
+   overflow: hidden;
+   width: 100%;
+ }
+
+ .card-overlay img {
+   width: 100%;
+ }

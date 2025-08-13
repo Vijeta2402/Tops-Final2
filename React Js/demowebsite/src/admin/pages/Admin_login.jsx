@@ -1,12 +1,76 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import axios from 'axios';
+import React, { useState } from 'react'
+import { Link, NavLink, useNavigate} from 'react-router-dom'
+import { toast } from 'react-toastify';
+import swal from 'sweetalert'; 
 
 function Admin_login() {
+
+    const redirect=useNavigate();
+
+    const [formdata, setFormdata] = useState({
+        email: "",
+        password: ""
+    });
+
+    const changeHandel = (e) => {
+        setFormdata({ ...formdata, [e.target.name]: e.target.value });
+        console.log(formdata);
+    }
+
+        function validation() {
+            let ans = true;
+    
+            if (formdata.email == "") {
+                toast.error('Email Field is required');
+                ans = false;
+            }
+            if (formdata.password == "") {
+                toast.error('Password Field is required');
+                ans = false;
+            }
+            return ans;
+        }
+
+        const submitHandel = async (e) => {
+        e.preventDefault();
+        if (validation()) {
+            const res = await axios.get(`http://localhost:3000/admin?email=${formdata.email}`);
+            if (res.data.length > 0) {
+                if (formdata.password == res.data[0].password) {
+                    localStorage.setItem('a_name',res.data[0].name);
+                    localStorage.setItem('a_email',res.data[0].email);
+                    
+                    redirect('/dashboard');    
+                    swal("Good job!", "Login Success!", "success");
+                }
+                else {
+                    swal("Error", "Wrong Password!", "error");
+                }
+            }
+            else {
+                swal("Error", "Email does not exist! ", "error");
+            }
+        }
+
+    }
+
+
+
     return (
         <div>
             <div>
                 {/* ***** Preloader Start ***** */}
-                
+                <div id="js-preloader" className="js-preloader">
+                    <div className="preloader-inner">
+                        <span className="dot" />
+                        <div className="dots">
+                            <span />
+                            <span />
+                            <span />
+                        </div>
+                    </div>
+                </div>
                 {/* ***** Preloader End ***** */}
                 <div className="sub-header">
                     <div className="container">
@@ -75,19 +139,19 @@ function Admin_login() {
                         <div className="row">
 
                             <div className="col-lg-8 offset-lg-2">
-                                <form id="contact-form" action method="post">
+                                <form id="contact-form" action method="post" onSubmit={submitHandel}>
                                     <div className="row">
 
                                         <div className="col-lg-12">
                                             <fieldset>
                                                 <label htmlFor="email">Email Address</label>
-                                                <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required />
+                                                <input type="text" onChange={changeHandel} name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required />
                                             </fieldset>
                                         </div>
                                         <div className="col-lg-12">
                                             <fieldset>
                                                 <label htmlFor="name">Password</label>
-                                                <input type="password" name="password" id="name" placeholder="Your Password..." autoComplete="on" required />
+                                                <input type="password" onChange={changeHandel} name="password" id="name" placeholder="Your Password..." autoComplete="on" required />
                                             </fieldset>
                                         </div>
 

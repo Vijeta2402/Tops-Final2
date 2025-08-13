@@ -7,6 +7,8 @@ import Usercard_row from './Task-5/Usercard_row';
 import Counter from './Task-6/Counter';
 import Button from './Task-7/Button'; // Assuming Button is in Task-7 folder
 import InputForm from './Task-8/InputForm'; // Assuming InputForm is in Task-8 folder
+import Users_login from './Task-9/Users_login'; // Assuming Users_login is in Task-9 folder
+import Ternary_operator from './Task-10/Ternary_operator';
 function App() {
   return (
     <div>
@@ -35,6 +37,12 @@ function App() {
       <hr></hr>
       <br></br>
       <InputForm />
+      <br></br>
+      <hr></hr>
+      <Users_login/>
+      <br></br>
+      <hr></hr>
+      <Ternary_operator/>
       <br></br>
       <hr></hr>
     </div>
