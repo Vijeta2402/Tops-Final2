@@ -1,3 +1,4 @@
+/*Add validation to the form created above. For example, ensure that the email input contains a valid email address */
 
 import React, { Component } from "react";
 import "./Form_validation.css";
@@ -25,9 +26,9 @@ class Form_validation extends Component {
       errors.name = "Name is required";
       isValid = false;
     }
-
+    
     // Email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;      
     if (!email.trim()) {
       errors.email = "Email is required";
       isValid = false;
@@ -72,15 +73,15 @@ class Form_validation extends Component {
       const newUser = { name, email, password };
 
       this.setState((prevState) => ({
-        submittedUsers: [...prevState.submittedUsers, newUser],
-        name: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-        errors: {}
-      }));
+      submittedUsers: [...prevState.submittedUsers, newUser],
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: ""
+    }));
     }
   };
+
 
   render() {
     const { name, email, password, confirmPassword, errors, submittedUsers } = this.state;

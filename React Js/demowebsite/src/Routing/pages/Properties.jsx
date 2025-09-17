@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function Properties() {
 
@@ -48,7 +49,7 @@ function Properties() {
                             categories.map((value) => {
                                 return (
                                     <li>
-                                        <a href="#!" data-filter={"."+value.cate_name}>{value.cate_name}</a>
+                                        <a href="#!" data-filter={"." + value.cate_name}>{value.cate_name}</a>
                                     </li>
                                 )
                             })
@@ -64,10 +65,10 @@ function Properties() {
                                 return (
                                     <div className="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6">
                                         <div className="item">
-                                            <a href="property-details.html"><img src={value.prop_image} height="150px" alt /></a>
+                                            <Link to={'/property-details/'+value.id}><img src={value.prop_image} height="150px" alt /></Link>
                                             <span className="category">{value.prop_name}</span>
                                             <h6>{value.price}</h6>
-                                            <h4><a href="property-details.html">{value.prop_name}</a></h4>
+                                            <h4><Link to={'/property-details/'+value.id}>{value.prop_name}</Link></h4>
                                             <ul>
                                                 <li>Bedrooms: <span>{value.bedroom}</span></li>
                                                 <li>Bathrooms: <span>{value.bathroom}</span></li>

@@ -43,7 +43,7 @@ function SignIn() {
                                                                       </fieldset>
                                                     </div>
                                                     <div className="col-lg-12">
-                                                                 <Link to="/signup" className='float-end'>If you already registered then Sign Up Here</Link>
+                                                                 <Link to="/signup" className='float-end'>If you are not registered then Sign Up Here</Link>
                                                     </div>
                                                </div>
                                             </form>

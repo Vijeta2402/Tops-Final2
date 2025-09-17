@@ -21,63 +21,71 @@
 </head>
 
 <body>
- <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="images/logo.svg" alt="Nivia Logo" height="40"></a>
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.svg" alt="Nivia Logo" height="40">
+      </a>
+
+      <!-- Mobile Toggle -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <!-- Navbar Links -->
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="#">ALL SPORTS</a></li>
-          <li class="nav-item  megamenu">
-            <a class="nav-link" href="#" id="apparelDropdown" data-bs-toggle="dropdown">APPAREL</a>
-            <div class="dropdown-menu mega-menu px-1 " aria-labelledby="apparelDropdown">
-              <div class="row ">
-                <!-- Men -->
-                <div class="col-md-3">
-                  <h6 class="dropdown-header">Men</h6>
-                  <a class="dropdown-item " href="#">T-shirt</a>
-                  <a class="dropdown-item" href="#">Shorts</a>
-                  <a class="dropdown-item" href="#">Tracksuit</a>
-                  <a class="dropdown-item" href="#">Trackpant</a>
-                  <a class="dropdown-item" href="#">Training Bibs</a>
-                  <a class="dropdown-item" href="#">Compression</a>
 
-                </div>
+          <!-- Mega Menu -->
+          <li class="nav-item megamenu">
+            <a class="nav-link" href="#" id="apparelDropdown">APPAREL</a>
+            <div class="mega-menu">
+              <div class="container-fluid">
+                <div class="row">
+                  <!-- Men -->
+                  <div class="col-md-3">
+                    <h6 class="dropdown-header">Men</h6>
+                    <a class="dropdown-item" href="#">T-shirt</a>
+                    <a class="dropdown-item" href="#">Shorts</a>
+                    <a class="dropdown-item" href="#">Tracksuit</a>
+                    <a class="dropdown-item" href="#">Trackpant</a>
+                    <a class="dropdown-item" href="#">Training Bibs</a>
+                    <a class="dropdown-item" href="#">Compression</a>
+                    <a class="dropdown-item" href="#">Jackets</a>
+                  </div>
 
-                <!-- Team Wear -->
-                <div class="col-md-3">
-                  <h6 class="dropdown-header">Team Wear</h6>
-                  <a class="dropdown-item" href="#">Football</a>
-                  <a class="dropdown-item" href="#">Basketball</a>
-                  <a class="dropdown-item" href="#">Volleyball</a>
-                  <a class="dropdown-item" href="#">Cricket</a>
-                  <a class="dropdown-item" href="#">Goalkeeper</a>
-                  <a class="dropdown-item" href="#">Track & Field</a>
-                </div>
+                  <!-- Team Wear -->
+                  <div class="col-md-3">
+                    <h6 class="dropdown-header">Team Wear</h6>
+                    <a class="dropdown-item" href="#">Football</a>
+                    <a class="dropdown-item" href="#">Basketball</a>
+                    <a class="dropdown-item" href="#">Volleyball</a>
+                    <a class="dropdown-item" href="#">Cricket</a>
+                    <a class="dropdown-item" href="#">Goalkeeper</a>
+                    <a class="dropdown-item" href="#">Track & Field</a>
+                  </div>
 
-                <!-- Women -->
-                <div class="col-md-3">
-                  <h6 class="dropdown-header">Women</h6>
-                  <a class="dropdown-item" href="#">T-shirt</a>
-                  <a class="dropdown-item" href="#">Shorts</a>
-                  <a class="dropdown-item" href="#">Trackpant</a>
-                  <a class="dropdown-item" href="#">Training Bibs</a>
-                  <a class="dropdown-item" href="#">Compression</a>
-                  <a class="dropdown-item" href="#">Jackets</a>
+                  <!-- Women -->
+                  <div class="col-md-3">
+                    <h6 class="dropdown-header">Women</h6>
+                    <a class="dropdown-item" href="#">T-shirt</a>
+                    <a class="dropdown-item" href="#">Shorts</a>
+                    <a class="dropdown-item" href="#">Trackpant</a>
+                    <a class="dropdown-item" href="#">Training Bibs</a>
+                    <a class="dropdown-item" href="#">Compression</a>
+                    <a class="dropdown-item" href="#">Jackets</a>
+                  </div>
 
-                </div>
-
-                <!-- Image -->
-                <div class="col-md-3">
-                  <img src="images/Apparel_nav.jpg" alt="Apparel Image" class="img-fluid rounded hight:85%" />
+                  <!-- Image -->
+                  <div class="col-md-3">
+                    <img src="images/Apparel_nav.jpg" alt="Apparel Image" class="img-fluid rounded">
+                  </div>
                 </div>
               </div>
             </div>
           </li>
-
           <li class="nav-item"><a class="nav-link" href="#">FOOTWEAR</a></li>
           <li class="nav-item"><a class="nav-link" href="#">FITNESS</a></li>
           <li class="nav-item"><a class="nav-link" href="#">MUSCLE SUPPORT</a></li>
@@ -86,20 +94,16 @@
           <li class="nav-item"><a class="nav-link" href="#">CLUBS</a></li>
         </ul>
 
-        <!-- Right Side Icons -->
+        <!-- Icons -->
         <div class="icons me-5">
-           <a href="#" class="me-2">
-            <img src="images/searchimg.png" alt="" width="25px" />
-          </a>
-          <a href="#" class="me-2">
-            <img src="images/adminimg.png" alt="" width="25px" />
-          </a>
-          <a href="#" class="me-2">
-            <img src="images/card.png" alt="" width="25px" />
+          <a href="#" class="me-2"><img src="images/searchimg.png" alt="" width="25px"></a>
+          <a href="#" class="me-2"><img src="images/adminimg.png" alt="" width="25px"></a>
+          <a href="#" class="me-2"><img src="images/card.png" alt="" width="25px"></a>
         </div>
       </div>
     </div>
   </nav>
+
   <!---navbar end----->
   <!-- home-page -->
   <div class="home">

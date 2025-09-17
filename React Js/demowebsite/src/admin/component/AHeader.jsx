@@ -94,7 +94,9 @@ function AHeader() {
                                                 <li><NavLink to="/admin_login" className="w-100 h-50 p-1"> <span className='fa fa-user'></span> Login</NavLink></li>
                                             )
                                         }
-                                    })()}                                </ul>
+                                    })()}                  
+                                    
+                                </ul>
                                 <a className="menu-trigger">
                                     <span>Menu</span>
                                 </a>

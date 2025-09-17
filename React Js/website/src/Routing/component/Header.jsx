@@ -35,7 +35,7 @@ function Header() {
                                     <li><NavLink to="/shop">Our Shop</NavLink></li>
                                     <li><NavLink to="/product-details">Product Details</NavLink></li>
                                     <li><NavLink to="/contact">Contact Us</NavLink></li>
-                                    <li><NavLink to="/signup">Sign Up</NavLink></li>
+                                    <li><NavLink to="/signin">Sign in</NavLink></li>
                                 </ul>
                                 <a className="menu-trigger">
                                     <span>Menu</span>

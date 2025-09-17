@@ -120,6 +120,7 @@ function SignUp() {
                                     </div>
                                     <div className="col-lg-12">
                                         <Link className='float-end' to="/Sign-In" >If you already registere then Login here</Link>
+                                        
                                     </div>
                                 </div>
                             </form>

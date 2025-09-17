@@ -1,28 +1,39 @@
-/* Mobile & Tablet default */
-/* Mobile and tablet: dropdown static (push content down if needed) */
-.dropdown-menu.mega-menu {
-  width: 900px; /* or whatever width fits your content */
-  padding: 1.5rem;
+.megamenu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%; /* Wider menu */
+  background: #fff; /* Solid background */
+  padding: 20px;
+  display: flex; /* Side-by-side columns */
+  gap: 30px; /* Space between columns */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+    .mega-menu {
+    top: 60px; /* match your navbar height */
 }
 
-.dropdown-menu.mega-menu .row {
-  margin: 0;
+.navbar {
+    position: relative; /* ensures the mega menu positions relative to navbar */
 }
 
-.dropdown-menu.mega-menu .col-md-3 {
-  padding-left: 1rem;
-  padding-right: 1rem;
+
+.megamenu .column {
+  flex: 1;
 }
 
-.dropdown-menu.mega-menu .image-col {
-  display: flex;
-  align-items: center;
+.megamenu a {
+  display: block;
+  padding: 4px 0;
+  color: black;
+  text-decoration: none;
 }
 
-.dropdown-menu.mega-menu .image-col img {
-  max-height: 200px;
-  width: auto;
+.megamenu a:hover {
+  color: red;
 }
+
 
 
     

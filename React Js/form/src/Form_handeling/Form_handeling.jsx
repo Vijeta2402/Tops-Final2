@@ -3,27 +3,29 @@ import React, { useState } from 'react'
 function Form_handeling() {
 
     const [formvalue, setFormhandel] = useState({
-        id: "",
+        id:"",
         name: "",
         email: "",
         password: ""
     })
 
     const changeHandel = (e) => {
-        setFormhandel({ ...formvalue, id: new Date().getTime().toString(), [e.target.name]: e.target.value });
+        setFormhandel({ ...formvalue,id:new Date().getTime().toString(),[e.target.name]: e.target.value });
         console.log(formvalue);
     }
 
     const [data, setData] = useState([]);
     const submitHandel = (e) => {
         e.preventDefault();
-        setData([...data, formvalue]);
-        setFormhandel({ ...formvalue, name: "", email: "", password: "" });
+        setData([...data,formvalue]);
+         setFormhandel({ ...formvalue,name:"",email:"",password:"" });
     }
+
     const deleteHandel = (id) => {
-        var filterdata = data.filter((value, index, arr) => { return value.id != id });
+        var filterdata= data.filter((value,index,arr)=> { return value.id!=id});
         setData(filterdata);
     }
+
 
 
     return (
@@ -53,13 +55,11 @@ function Form_handeling() {
                 <table className="table table-hover">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>ID</th>    
                             <th>Name</th>
                             <th>Email</th>
                             <th>Password</th>
-                            <td>
-                                <button onClick={() => deleteHandel(value.id)} className='btn btn-danger'>Delete{value.id}</button>
-                            </td>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,11 +68,11 @@ function Form_handeling() {
 
                                 return (
                                     <tr>
-                                        <th>{value.id}</th>
+                                        <th>{value.id}</th>      
                                         <td>{value.name}</td>
                                         <td>{value.email}</td>
                                         <td>{value.password}</td>
-                                         <td>
+                                        <td>
                                             <button onClick={()=>deleteHandel(value.id)} className='btn btn-danger'>Delete{value.id}</button>
                                         </td>
                                     </tr>

@@ -13,7 +13,7 @@ function Fprops_card({img,title,description}) {
             </div>
         </div>
     )
-}
+}                                                                    
 export default Fprops_card
 
 

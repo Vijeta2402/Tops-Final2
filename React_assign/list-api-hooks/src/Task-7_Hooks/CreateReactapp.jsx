@@ -6,7 +6,7 @@ import React from 'react'
 function CreateReactapp() {
   return (
     <div>
-      
+        
     </div>
   )
 }

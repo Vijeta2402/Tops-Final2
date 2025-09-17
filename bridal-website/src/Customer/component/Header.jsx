@@ -1,6 +1,123 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate, Link } from 'react-router-dom'
+import swal from 'sweetalert';
 
+function Header() {
+
+    const redirect = useNavigate();
+    const logout = () => {
+        localStorage.removeItem('u_id');
+        localStorage.removeItem('u_name');
+        localStorage.removeItem('u_email');
+        swal("Good job!", "Logout Success!", "success");
+        redirect('/');
+    }
+    return (
+        <div>
+            {/* ***** Preloader Start ***** */}
+
+
+
+            {/* ***** Preloader End ***** */}
+            <div className="sub-header">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-8 col-md-8">
+                            <ul className="info">
+                                <li><i className="fa fa-envelope" /> info@company.com</li>
+                                <li><i className="fa fa-map" /> Sunny Isles Beach, FL 33160</li>
+
+                                {(() => {
+                                    if (localStorage.getItem('u_name')) {
+                                        return (
+
+                                            <li><i className="fa fa-user" />
+                                                Welcome : {localStorage.getItem('u_name')}
+                                            </li>
+
+                                        )
+                                    }
+                                })()}
+
+
+                            </ul>
+                        </div>
+                        <div className="col-lg-4 col-md-4">
+                            <ul className="social-links">
+                                <li><Link to="/user_profile"><i className="fa fa-user" /> </Link></li>
+                                <li><a href="#"><i className="fab fa-linkedin" /></a></li>
+                                <li><a href="#"><i className="fab fa-instagram" /></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* ***** Header Area Start ***** */}
+            <header className>
+                <nav className="navbar navbar-expand-lg">
+                    <div className="container">
+                        <a className="navbar-brand" href="index.html"><h2>Wed <em>Me</em>Good</h2></a>
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon" />
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarResponsive">
+                            <ul className="navbar-nav ml-auto">
+                                <li className="nav-item">
+                                    <NavLink to="/" className="nav-link">Home</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink to="/makeup_List" className="nav-link">MakeUp List</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink to="/makeup-details" className="nav-link">MakeUp Details</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink to="/about" className="nav-link">About Us</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink to="/contact" className="nav-link">Contact Us</NavLink>
+                                </li>
+                                {(() => {
+                                        if (localStorage.getItem('u_id')) {
+                                            return (
+                                            <li className="nav-item">
+                                                <a href="" onClick={logout} className="w-100 h-50 p-1 nav-link"> Logout</a>
+                                            </li>
+                                            )
+                                        }
+                                        else
+                                        {
+                                            return(
+                                            <li className="nav-item">
+                                               <NavLink to="/Sign-In" className="nav-link"> 
+                                               <span className='fa fa-user'></span> Login
+                                               </NavLink>
+                                            </li>
+                                            )
+                                        }
+                                })()}
+                            </ul>
+
+                           
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            {/* ***** Header Area End ***** */}
+        </div>
+
+    )
+}
+
+export default Header
+
+
+
+
+
+/*
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 function Header() {
     return (
         <div>
@@ -71,7 +188,7 @@ function Header() {
                                             
                                         </div>
 
-                                        <div className="mega-column">
+                                        <div className="mega-column">   
                                             <h4>Hair</h4>
                                             <NavLink to="/bridal-hairstyles">Bridal Hairstyles</NavLink>
                                             <NavLink to="/hair-engagement">Engagement</NavLink>
@@ -102,9 +219,9 @@ function Header() {
 
                                 <li className="nav-item mega-parent">
                                     <a className="nav-link">Services</a>
-                                    <div className="mega-menu">               */}
-            {/* Makeup Types Column */}
-            {/*  <div className="mega-column">
+                                    <div className="mega-menu">               */
+{/* Makeup Types Column */ }
+{/*  <div className="mega-column">
                                             <h4 className="destination-heading">Makeup Types</h4>
                                             <ul className="makeup-list">
                                                 <li><NavLink to="/bridal-makeup">Bridal Makeup</NavLink></li>
@@ -115,7 +232,7 @@ function Header() {
                                         </div>
 
                                         {/* Destination Column */}
-            {/*                          <div className="mega-column">
+{/*                          <div className="mega-column">
                                             <h4 className="destination-heading">Destination</h4>
                                             <div className="destination-container">
                                                 <NavLink to="/goa" className="destination-link">
@@ -135,8 +252,8 @@ function Header() {
                                             </div>
                                         </div>                  */}
 
-            {/* Featured Column */}
-            {/*                     <div className="mega-column">
+{/* Featured Column */ }
+{/*                     <div className="mega-column">
                                             <h4 className="destination-heading">Featured</h4>
                                             <div className="featured-container">
                                                 <img src="/assets/images/bridal1.jpg" alt="Featured1" className="featured-img" />
@@ -171,8 +288,8 @@ function Header() {
                     </div>
                 </nav>
             </header>          */}
-        </div >
+{/*</div >
     )
 }
 
-export default Header
+export default Header*/}
