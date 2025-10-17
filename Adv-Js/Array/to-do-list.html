@@ -8,8 +8,6 @@
     </table>
 
 </div>
-
-
 <script>
     var list= document.getElementById('list');
     var names=[];
@@ -17,9 +15,6 @@
         var value=document.getElementById('names').value;
         names.push(value);   //Add in last value in arr
         for(var i=0; i<names.length;i++)
-          
-        
-
         {
                 var html=`<tr>
                     <td> ${names[i] } </td>
@@ -28,10 +23,4 @@
             
             list.insertAdjacentHTML("beforeend",html);
        }
-
-
-     
-
-
-
 </Script>

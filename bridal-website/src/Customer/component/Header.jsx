@@ -24,8 +24,8 @@ function Header() {
                     <div className="row">
                         <div className="col-lg-8 col-md-8">
                             <ul className="info">
-                                <li><i className="fa fa-envelope" /> info@company.com</li>
-                                <li><i className="fa fa-map" /> Sunny Isles Beach, FL 33160</li>
+                                <li><i className="fa fa-envelope" /> contact@wedmegorgeous.in</li>
+                                <li><i className="fa fa-map" /> Lucknow, Uttar Pradesh</li>
 
                                 {(() => {
                                     if (localStorage.getItem('u_name')) {
@@ -66,13 +66,16 @@ function Header() {
                                     <NavLink to="/" className="nav-link">Home</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink to="/makeup_List" className="nav-link">MakeUp List</NavLink>
+                                    <NavLink to="/services" className="nav-link">Services</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink to="/makeup-details" className="nav-link">MakeUp Details</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink to="/about" className="nav-link">About Us</NavLink>
+                                </li>
+                                <li className='nav-item'>
+                                   <NavLink to="/order" className="nav-link">Order</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink to="/contact" className="nav-link">Contact Us</NavLink>

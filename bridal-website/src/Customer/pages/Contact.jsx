@@ -97,54 +97,107 @@ function Contact() {
           </div>
         </div>
       </div>
-      <div className="send-message">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="section-heading">
-                <h2>Send us a Message</h2>
-              </div>
+     
+     <div className="container py-5">
+      <h2 className="text-center mb-5 fw-bold text-danger">
+        💌 Contact Us
+      </h2>
+
+      <div className="row g-4">
+        {/* Contact Form */}
+        <div className="col-md-7">
+          <div className="card shadow-lg border-0 rounded-4">
+            <div className="card-body p-4">
+              <h4 className="mb-4 text-center text-secondary">
+                Send Us a Message
+              </h4>
+              <form id="contact-form" action method="post" onSubmit={submitHandel}>
+                <div className="mb-3">
+                  <label htmlFor="name">Full Name</label>
+                  
+                  <input type="name" onChange={changeHandel} value={formdata.name} name="name" id="name" placeholder="Your Name..."className="form-control rounded-pill"
+                  required />
+                </div>
+
+                <div className="mb-3">
+                  <label  htmlFor="email">Email</label>
+                  <input  type="email" className="form-control rounded-pill" onChange={changeHandel} value={formdata.email} name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..."
+                    required
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="subject">Mobile</label>
+                  <input  type="number" onChange={changeHandel} value={formdata.mobile} name="mobile" id="mobile" placeholder="Mobile..."
+                    className="form-control rounded-pill"required/>
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="message">Message</label>
+                  <textarea
+                    className="form-control rounded-3" name="message" onChange={changeHandel} value={formdata.message} id="message" placeholder="Your Message" defaultValue={""}
+                    rows="4" required
+                  ></textarea>
+                </div>
+                   <button type="submit" id="form-submit" className="filled-button"class="btn btn-danger w-100 rounded-pill py-2">
+                  ✨ Send Message
+                </button>
+              </form>
             </div>
-            <div className="col-md-8">
-              <div className="contact-form">
-                <form id="contact" action method="post">
-                  <div className="row">
-                    <div className="col-lg-12 col-md-12 col-sm-12">
-                      <fieldset>
-                        <label htmlFor="name">Full Name</label>
-                        <input type="name" onChange={changeHandel} value={formdata.name} name="name" id="name" placeholder="Your Name..." />
-                      </fieldset>
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12">
-                      <fieldset>
-                        <label htmlFor="email">Email Address</label>
-                        <input type="email" onChange={changeHandel} value={formdata.email} name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." />
-                      </fieldset>
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12">
-                      <fieldset>
-                        <label htmlFor="subject">Mobile</label>
-                        <input type="number" onChange={changeHandel} value={formdata.mobile} name="mobile" id="mobile" placeholder="Mobile..." />
-                      </fieldset>
-                    </div>
-                    <div className="col-lg-12">
-                      <fieldset>
-                        <label htmlFor="message">Message</label>
-                        <textarea name="message" onChange={changeHandel} value={formdata.message} id="message" placeholder="Your Message" defaultValue={""} />
-                      </fieldset>
-                    </div>
-                    <div className="col-lg-12">
-                      <fieldset>
-                        <button type="submit" id="form-submit" className="filled-button">Send Message</button>
-                      </fieldset>
-                    </div>
-                  </div>
-                </form>
-              </div>
+          </div>
+        </div>
+
+        {/* Contact Info */}
+        <div className="col-md-5">
+          <div className="card shadow-lg border-0 rounded-4 bg-light h-100">
+            <div className="card-body p-4">
+              <h4 className="mb-3 text-secondary">Get in Touch</h4>
+              <p>
+                <i className="bi bi-geo-alt-fill text-danger me-2"></i>
+                123 Bridal Studio Lane, Mumbai, India
+              </p>
+              <p>
+                <i className="bi bi-envelope-fill text-danger me-2"></i>
+                info@bridalmakeup.com
+              </p>
+              <p>
+                <i className="bi bi-telephone-fill text-danger me-2"></i>
+                +91 9876543210
+              </p>
+              <hr />
+              <h5 className="mb-3">Follow Us</h5>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                className="me-3 text-danger fs-3"
+              >
+                <i className="bi bi-instagram"></i>
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                className="me-3 text-primary fs-3"
+              >
+                <i className="bi bi-facebook"></i>
+              </a>
+              <a
+                href="https://whatsapp.com"
+                target="_blank"
+                rel="noreferrer"
+                className="text-success fs-3"
+              >
+                <i className="bi bi-whatsapp"></i>
+              </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+
+
       <div className="happy-clients">
         <div className="container">
           <div className="row">

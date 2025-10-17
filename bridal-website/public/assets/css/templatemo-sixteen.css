@@ -335,6 +335,7 @@ header .navbar {
 .navbar .navbar-nav .nav-item {
 	margin: 0px 15px;
 }
+
 .navbar .navbar-nav a.nav-link {
 	text-transform: capitalize;
 	font-size: 15px;
@@ -344,6 +345,24 @@ header .navbar {
 	transition: all 0.5s;
 	margin-top: 5px;
 }
+ 
+ /*---dashboard page -------*/
+ .sidebar1{
+	background-color: #e72e77;
+ }
+.navbar-nav a.nav-link{
+	text-transform: capitalize;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	color: #fff;
+	transition: all 0.5s;
+	margin-top: 5px;	
+ }
+
+
+
+/*------dashboard page-----*/
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .active>.nav-link,
 .navbar .navbar-nav .nav-link.active,
@@ -751,6 +770,37 @@ header .navbar {
 }
 
 /* image slider end here */
+/* ===== Sidebar & Main Content Layout ===== */
+
+/* Desktop (default) */
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  transition: transform .25s ease;
+}
+
+/* Small screens: sidebar overlays */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1040;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transform: translateX(-100%); /* hidden */
+  }
+  .sidebar.collapsed {
+    transform: translateX(0); /* visible */
+  }
+
+  /* Make main content take full width */
+  main {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
 
 
 

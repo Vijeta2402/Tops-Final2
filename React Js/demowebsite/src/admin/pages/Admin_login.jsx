@@ -1,12 +1,21 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink, useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify';
 import swal from 'sweetalert'; 
 
 function Admin_login() {
 
-    const redirect=useNavigate();
+     const redirect=useNavigate();
+
+    useEffect(()=>{
+        if(localStorage.getItem('a_id'))
+        {
+            redirect('/dashboard');
+        }
+    })
+
+   
 
     const [formdata, setFormdata] = useState({
         email: "",
@@ -38,6 +47,8 @@ function Admin_login() {
             const res = await axios.get(`http://localhost:3000/admin?email=${formdata.email}`);
             if (res.data.length > 0) {
                 if (formdata.password == res.data[0].password) {
+
+                    localStorage.setItem('a_id',res.data[0].id);
                     localStorage.setItem('a_name',res.data[0].name);
                     localStorage.setItem('a_email',res.data[0].email);
                     
@@ -60,17 +71,7 @@ function Admin_login() {
     return (
         <div>
             <div>
-                {/* ***** Preloader Start ***** */}
-                <div id="js-preloader" className="js-preloader">
-                    <div className="preloader-inner">
-                        <span className="dot" />
-                        <div className="dots">
-                            <span />
-                            <span />
-                            <span />
-                        </div>
-                    </div>
-                </div>
+               
                 {/* ***** Preloader End ***** */}
                 <div className="sub-header">
                     <div className="container">

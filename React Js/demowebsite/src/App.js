@@ -25,6 +25,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import User_profile from "./Routing/pages/User_profile";
 import Edit_profile from "./Routing/pages/Edit_profile";
 
+import Admin_authantic from "./admin/pages/Admin_authantic";
+import User_after_auth from "./Routing/pages/User_after_auth";
+import User_before_auth from "./Routing/pages/User_before_auth";
+
 function App() {
   return (
     <div>
@@ -33,28 +37,32 @@ function App() {
         <Routes>
           <Route path="/" element={<> <Header/> <Index/> <Footer/></>}></Route>
           <Route path="/properties" element={<> <Header/> <Properties/> <Footer/></>}></Route>
-          <Route path="/property-details" element={<> <Header/> <Properties_details/> <Footer/></>}></Route>
+          <Route path="/property-details/:id" element={<> <Header/> <Properties_details/> <Footer/></>}></Route>
           <Route path="/contact" element={<> <Header/> <Contact/> <Footer/></>}></Route>
-          <Route path="/Sign-Up" element={<> <Header/> <SignUp/> <Footer/></>}></Route>
-          <Route path="/Sign-In" element={<> <Header/> <SignIn/> <Footer/></>}></Route>
-           <Route path="/user_profile" element={<> <Header/> <User_profile/> <Footer/></>}></Route>
-          <Route path="/edit_profile/:id" element={<> <Header/> <Edit_profile/> <Footer/></>}></Route>
+         
+          <Route element={<User_before_auth/>}>
+            <Route path="/Sign-Up" element={<> <Header/> <SignUp/> <Footer/></>}></Route>
+            <Route path="/Sign-In" element={<> <Header/> <SignIn/> <Footer/></>}></Route>
+          </Route>
 
+          <Route element={<User_after_auth/>}>
+            <Route path="/user_profile" element={<> <Header/> <User_profile/> <Footer/></>}></Route>
+            <Route path="/edit_profile/:id" element={<> <Header/> <Edit_profile/> <Footer/></>}></Route>
+          </Route>
+
+          <Route path="/admin-login" element={<>  <Admin_login/> <AFooter/></>}></Route>  
           
-
-          <Route path="/admin-login" element={<> <AHeader/> <Admin_login/> <AFooter/></>}></Route>
-          <Route path="/dashboard" element={<> <AHeader/> <Dashboard/> <AFooter/></>}></Route>
-
-          <Route path="/add_categories" element={<> <AHeader/> <Add_categories/> <AFooter/></>}></Route>
-          <Route path="/manage_categories" element={<> <AHeader/> <Manage_categories/> <AFooter/></>}></Route>
-
-          <Route path="/add_properties" element={<> <AHeader/> <Add_properties/> <AFooter/></>}></Route>
-          <Route path="/manage_properties" element={<> <AHeader/> <Manage_properties/> <AFooter/></>}></Route>
-
-          <Route path="/manage_customer" element={<> <AHeader/> <Manage_customer/> <AFooter/></>}></Route>
-          <Route path="/manage_feedback" element={<> <AHeader/> <Manage_feedaback/> <AFooter/></>}></Route>
-          <Route path="/manage_booking" element={<> <AHeader/> <Manage_booking/> <AFooter/></>}></Route>
-
+          <Route element={<Admin_authantic/>}>
+            <Route path="/dashboard" element={<> <AHeader/> <Dashboard/> <AFooter/></>}></Route>
+            <Route path="/add_categories" element={<> <AHeader/> <Add_categories/> <AFooter/></>}></Route>
+            <Route path="/manage_categories" element={<> <AHeader/> <Manage_categories/> <AFooter/></>}></Route>
+            <Route path="/add_properties" element={<> <AHeader/> <Add_properties/> <AFooter/></>}></Route>
+            <Route path="/manage_properties" element={<> <AHeader/> <Manage_properties/> <AFooter/></>}></Route>
+            <Route path="/manage_customer" element={<> <AHeader/> <Manage_customer/> <AFooter/></>}></Route>
+            <Route path="/manage_feedback" element={<> <AHeader/> <Manage_feedaback/> <AFooter/></>}></Route>
+            <Route path="/manage_booking" element={<> <AHeader/> <Manage_booking/> <AFooter/></>}></Route>
+          </Route>
+          
         </Routes>
     
       </BrowserRouter>

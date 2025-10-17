@@ -13,7 +13,7 @@ function Func_state() {
       }
        <button onClick={() =>setData({...data, isImage: !data.isImage })}>Hide/Show</button>
       
-    </div>
+    </div> 
   )
 }
 

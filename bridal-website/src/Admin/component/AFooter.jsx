@@ -1,22 +1,18 @@
-import React from 'react'
-
 function AFooter() {
     return (
-        <div>
-            <footer>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="inner-content">
-                                <p>Copyright © 2020 Sixteen Clothing Co., Ltd.
-                                    - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
-                            </div>
+        <footer className="admin-footer">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="inner-content text-center">
+                            <p>Copyright © 2020 Sixteen Clothing Co., Ltd.
+                                - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                            </p>
                         </div>
                     </div>
                 </div>
-            </footer>
-
-        </div>
-    )
+            </div>
+        </footer>
+    );
 }
-export default AFooter
+export default AFooter;

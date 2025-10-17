@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { data, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
+import swal from 'sweetalert';
 function Manage_categories() {
 
     const redirect=useNavigate();
@@ -23,6 +23,48 @@ function Manage_categories() {
         console.log(res.data);
         toast.success('Data Deleted Success');
         getData();
+    }
+       
+    const [formdata, setFormdata] = useState({
+        id: "",
+        cate_name: "",
+        cate_image: ""
+    });
+
+     const editcate = async (id) => {
+        const res = await axios.get(`http://localhost:3000/categories/${id}`);
+        console.log(res.data);
+        setFormdata(res.data);
+    }
+
+    const changeHandel = (e) => {
+        setFormdata({ ...formdata, [e.target.name]: e.target.value });
+        console.log(formdata);
+    }
+
+    function validation() {
+        let ans = true;
+        if (formdata.cate_name == "") {
+            toast.error('Category Name Field is required');
+            ans = false;
+        }
+        if (formdata.cate_image == "") {
+            toast.error('Category Image URL Field is required');
+            ans = false;
+        }
+
+        return ans;
+    }
+
+
+    const submitHandel = async (e) => {
+        e.preventDefault();
+        if (validation()) {
+            const res = await axios.patch(`http://localhost:3000/categories/${formdata.id}`, formdata);
+            swal("Good job!", "Category updated Success!", "success");
+            getData();
+        }
+
     }
 
 
@@ -61,6 +103,8 @@ function Manage_categories() {
                                                     <td className='text-center'>
                                                         <button onClick={()=>deleteData(value.id)} className='btn btn-danger me-1'>Delete</button>
                                                         <button className='btn btn-primary me-1' onClick={()=>redirect('/edit_cate/'+value.id)}>Edit</button>
+
+                                                        
                                                     </td>
                                                 </tr>
                                             )

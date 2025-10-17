@@ -24,8 +24,7 @@ function Header() {
                             <ul className="info">
                                 <li><i className="fa fa-envelope" /> info@company.com</li>
                                 <li><i className="fa fa-map" /> Sunny Isles Beach, FL 33160</li>
-
-                                {(() => {
+                              {(() => {
                                     if (localStorage.getItem('u_name')) {
                                         return (
                                            

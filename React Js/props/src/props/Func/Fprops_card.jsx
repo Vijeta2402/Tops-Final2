@@ -10,7 +10,7 @@ function Fprops_card({img,title,description}) {
                     <p className="card-text">{description}</p>
                     <a href="#" className="btn btn-primary">View Product</a>
                 </div>
-            </div>
+            </div> 
         </div>
     )
 }                                                                    
