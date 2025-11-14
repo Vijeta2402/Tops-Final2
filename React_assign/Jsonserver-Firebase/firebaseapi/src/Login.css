@@ -1,0 +1,41 @@
+.login-container {
+  width: 350px;
+  margin: 100px auto;
+  padding: 25px;
+  background: #ffffff;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #444;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.signup { background: #4caf50; color: white; }
+.login { background: #2196f3; color: white; }
+.google { background: #db4437; color: white; }
+.logout { background: #f0ad4e; color: white; }
+
+button:hover {
+  opacity: 0.9;
+}

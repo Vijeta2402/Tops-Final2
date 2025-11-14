@@ -1,6 +1,6 @@
 
 /*Set up a basic React Router with two routes: one for a Home page and one for an About page. Display the appropriate content based on the URL. */
-import React from "react";
+
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
@@ -19,7 +19,7 @@ function App1() {
         <nav>
           <Link to="/" style={{ marginRight: "15px" }}>Home</Link>
           <Link to="/about">About</Link>
-        </nav>
+        </nav> 
 
         <Routes>
           <Route path="/" element={<Home />} />
