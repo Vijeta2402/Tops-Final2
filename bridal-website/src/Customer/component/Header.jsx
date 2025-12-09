@@ -14,9 +14,7 @@ function Header() {
     }
     return (
         <div>
-            {/* ***** Preloader Start ***** */}
-
-
+            {/* ***** Preloader Start ***** */} 
 
             {/* ***** Preloader End ***** */}
             <div className="sub-header">
@@ -74,9 +72,7 @@ function Header() {
                                 <li className="nav-item">
                                     <NavLink to="/about" className="nav-link">About Us</NavLink>
                                 </li>
-                                <li className='nav-item'>
-                                   <NavLink to="/order" className="nav-link">Order</NavLink>
-                                </li>
+                                
                                 <li className="nav-item">
                                     <NavLink to="/contact" className="nav-link">Contact Us</NavLink>
                                 </li>

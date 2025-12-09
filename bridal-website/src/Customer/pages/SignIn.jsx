@@ -59,7 +59,7 @@ function SignIn() {
       {/* Page Header */}
       <div className="page-heading header-text bg-light text-center py-5 shadow-sm">
         <div className="container">
-          <h3 className="fw-bold text-uppercase text-dark">Bridal Login</h3>
+          <h3 className="fw-bold text-uppercase text-dark"  style={{ marginTop: "90px" }}>Bridal Login</h3>
           <p className="text-muted">Access your bridal account</p>
         </div>
       </div>

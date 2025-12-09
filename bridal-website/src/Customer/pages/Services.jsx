@@ -43,7 +43,7 @@ function Services() {
       {/* Page Heading */}
       <div className="page-heading header-text py-5 text-center bg-light">
         <div className="container">
-          <h2 className="fw-bold" style={{ color: "#e72e77" }}>
+          <h2 className="fw-bold" style={{ color: "#e72e77", marginTop: "90px" }}>
             Bridal Makeup Packages
           </h2>
           <p className="text-muted mb-0">

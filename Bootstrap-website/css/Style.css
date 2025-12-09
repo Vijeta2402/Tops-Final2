@@ -3,18 +3,29 @@
   position: relative;
 }
 
-/* Mega dropdown */
 .megamenu .mega-menu {
   display: none;
   position: absolute;
-  left: 0;
   top: 100%;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   background: #fff;
-  padding: 30px 40px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 50px 60px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 9999;
+
+  /* Remove full width */
+  width: auto;
 }
+
+/* Ensure container width inside mega menu */
+.megamenu .mega-menu .container {
+  max-width: 5640px;
+  /* Same as Bootstrap container */
+}
+
+
+
 
 /* Desktop Hover */
 @media (min-width: 992px) {
@@ -25,10 +36,12 @@
 
 /* Link styling */
 .mega-menu .dropdown-item {
-  padding: 3px 0;
+  padding: 4px 0;
+  padding: auto;
   font-size: 14px;
   color: #000;
 }
+
 
 .mega-menu .dropdown-item:hover {
   color: #e60000;
@@ -38,6 +51,220 @@
 .mega-menu .dropdown-header {
   font-size: 16px;
   font-weight: 700;
+  padding: 6px 30px 12px 0;
   margin-bottom: 8px;
   color: #111;
+}
+
+.sport-card img {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+body {
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.product-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  transition: .3s;
+}
+
+.product-card:hover {
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.price-drop {
+  background: red;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.offer {
+  background: rgb(118, 136, 255);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.btn-cart {
+  color: white;
+  background: black;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 8px;
+}
+
+.btn-cart:hover {
+  background: rgb(70, 70, 70);
+}
+ /* section */
+.hero-nivia {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
+  background: black;
+}
+
+.hero-bg-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+.hero-content {
+  position: absolute;
+  left: 8%;
+  top: 25%;
+  z-index: 2;
+  color: #000;
+}
+
+.product-card {
+  position: relative;
+  border-radius: 8px;
+}
+
+/* hide real checkbox */
+.toggle {
+  display: none;
+}
+
+/* arrow button */
+.arrow-btn {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: #000;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* default hide button */
+.add-btn {
+  display: none;
+  width: 100%;
+  background: black;
+  color: white;
+  border: none;
+  padding: 8px;
+}
+
+/* SHOW on click */
+.toggle:checked ~ .add-btn {
+  display: block;
+}
+
+/* rotate arrow when active */
+.toggle:checked + .arrow-btn i {
+  transform: rotate(180deg);
+}
+
+/* hide Add to cart by default */
+
+/* HERO SECTION */
+.nivia-hero {
+  width: 100%;
+  height: 70vh;   /* adjust height as per design */
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-bg-img-nivia {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.hero-text-nivia {
+  position: relative;
+  z-index: 2;        /* ensures text is above the background */
+}
+
+.hero-text-nivia h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.newsletter-box {
+  max-width: 330px;
+  border-radius: 25px;
+  padding: 10px 20px;
+}
+
+/* NEWSLETTER */
+.newsletter-wrapper h2 {
+  color: #000;
+}
+
+
+/* TOP INFO BAR */
+.info-bar-nivia {
+  background: rgba(0, 0, 0, 0.85);
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  font-size: 15px;
+}
+
+/* FOOTER */
+.footer-nivia {
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(3px);
+}
+
+.footer-nivia a {
+  color: #ddd;
+  display: block;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.footer-nivia a:hover {
+  color: #fff;
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+
+/* BOTTOM COPYRIGHT */
+.footer-bottom-nivia {
+  background: rgba(0,0,0,0.85);
+  border-top: 1px solid #444;
+  font-size: 14px;
 }

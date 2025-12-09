@@ -28,8 +28,8 @@ function App() {
         //Props
         //<Func_props/>
         //<Class_props/>
-        //<Call_func/>
-      <Func_state/>
+        <Call_func/>
+     //. <Func_state/>
       }
      
     </div>
