@@ -43,7 +43,7 @@ function Contact() {
   const submitHandel = async (e) => {
     e.preventDefault();
     if (validation()) {
-     const res = await axios.post("/api/contact", formdata);
+     const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/contact`, formdata);
       console.log(res);
       swal("Good job!", "Contact Submitted Success!", "success");
       setFormdata({ ...formdata, name: "", email: "", mobile: "", message: "" });

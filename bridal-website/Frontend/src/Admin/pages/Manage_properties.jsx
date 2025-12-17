@@ -22,7 +22,7 @@ function Manage_properties() {
   // Fetch all bridal makeup packages
   const getData = async () => {
     try {
-      const res = await axios.get("/api/properties");
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/properties`);
       setPackages(res.data);
     } catch (error) {
       toast.error("Failed to load packages");
@@ -40,7 +40,7 @@ function Manage_properties() {
     }).then(async (willDelete) => {
       if (willDelete) {
         try {
-          await axios.delete(`/api/properties/${id}`);
+          await axios.delete(`${process.env.REACT_APP_API_URL}/api/properties/${id}`);
           toast.success("Package deleted successfully");
           getData();
         } catch (error) {
@@ -67,7 +67,7 @@ function Manage_properties() {
   const submitForm = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`/api/properties/${formdata.id}`, formdata);
+      await axios.put(`${process.env.REACT_APP_API_URL}/api/properties/${formdata.id}`, formdata);
       toast.success("Package updated successfully!");
       getData();
     } catch (error) {

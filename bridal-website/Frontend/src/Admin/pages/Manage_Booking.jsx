@@ -15,7 +15,7 @@ function Manage_Bookings() {
   // Fetch all bookings from JSON server
   const fetchBookings = async () => {
     try {
-      const res = await axios.get("/api/Bookings");
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/Bookings`);
       setBookings(res.data);
       setLoading(false);
     } catch (err) {
@@ -46,8 +46,7 @@ const updateStatus = async (id, status) => {
     };
 
     // PUT request with full object
-    
-    await axios.put(`http://localhost:5000/api/Bookings/${id}`, updatedBooking);
+    await axios.put(`${process.env.REACT_APP_API_URL}/api/Bookings/${id}`, updatedBooking);
     toast.success("Status updated successfully");
     fetchBookings(); // refresh table
   } catch (err) {
@@ -62,7 +61,7 @@ const updateStatus = async (id, status) => {
     if (!window.confirm("Are you sure you want to delete this booking?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/Bookings/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/Bookings/${id}`);
       toast.success("Booking deleted successfully");
       fetchBookings(); // refresh data
     } catch (err) {

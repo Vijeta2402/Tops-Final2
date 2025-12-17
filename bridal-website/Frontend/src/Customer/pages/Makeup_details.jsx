@@ -20,7 +20,8 @@ function Makeup_details() {
 
   const getMakeupDetails = async () => {
     try {
-      const res = await axios.get(`/api/properties/${id}`);
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/properties/${id}`);
+
       setMakeup(res.data);
     } catch (err) {
       console.error("Error fetching makeup details:", err);
@@ -47,7 +48,7 @@ function Makeup_details() {
     };
 
     try {
-      await axios.post("/api/Bookings", bookingData);
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/Bookings`, bookingData);
       toast.success("Appointment booked successfully!");
       navigate("/services");
     } catch (err) {

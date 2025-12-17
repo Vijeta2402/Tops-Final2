@@ -36,9 +36,7 @@ function SignIn() {
     if (validate()) {
       try {
         const res = await axios.get(
-          `/api/user?email=${formdata.email}&password=${formdata.password}`
-        );
-
+          `${process.env.REACT_APP_API_URL}/api/user?email=${formdata.email}&password=${formdata.password}`);
         if (res.data.length > 0) {
           // Save user ID in localStorage
           localStorage.setItem("u_id", res.data[0].id);

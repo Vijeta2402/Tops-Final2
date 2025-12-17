@@ -12,7 +12,7 @@ function Add_properties() {
     const [categories, setCategories] = useState([]);
 
     const getData = async () => {
-       const res = await axios.get(`/api/categories`);
+       const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/categories`);
         setCategories(res.data);
     };
 
@@ -67,7 +67,7 @@ function Add_properties() {
     const submitHandel = async (e) => {
         e.preventDefault();
         if (validation()) {
-         const res = await axios.post(`/api/properties`, formdata);
+         const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/properties`, formdata);
             console.log(res);
             swal("Good job!", "Makeup Package added successfully!", "success");
             setFormdata({

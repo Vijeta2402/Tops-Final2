@@ -23,8 +23,7 @@ function Edit_profile() {
 
   const getData = async () => {
     try {
-   const res = await axios.get(`/api/user/${id}`);
-
+     const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/user/${id}`);
       setFormdata(res.data);
     } catch (error) {
       console.error("Error fetching user data:", error);
@@ -70,7 +69,8 @@ function Edit_profile() {
     e.preventDefault();
     if (validation()) {
       try {
-        await axios.patch(`/api/user/${id}`, formdata);
+        await axios.patch(`${process.env.REACT_APP_API_URL}/api/user/${id}`, formdata);
+
         swal("Success!", "Profile updated successfully!", "success");
         redirect("/user_profile");
       } catch (error) {

@@ -39,7 +39,7 @@ function Admin_login() {
   const submitHandel = async (e) => {
     e.preventDefault();
     if (validation()) {
-      const res = await axios.get(`/api/admin?email=${formdata.email}`);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/admin?email=${formdata.email}`);
 
       if (res.data.length > 0) {
         if (formdata.password === res.data[0].password) {

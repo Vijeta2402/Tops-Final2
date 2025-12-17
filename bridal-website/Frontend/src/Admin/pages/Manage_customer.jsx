@@ -22,7 +22,7 @@ function Manage_customer() {
   };
 
   const deleteData = async (id) => {
-    await axios.delete(`/api/user/${id}`);
+    await axios.delete(`${process.env.REACT_APP_API_URL}/api/user/${id}`);
     toast.success("Customer deleted successfully 💖");
     getData();
   };
@@ -40,7 +40,7 @@ function Manage_customer() {
 
   const submitForm = async (e) => {
     e.preventDefault();
-    await axios.put(`/api/user/${formdata.id}`, formdata);
+    await axios.put(`${process.env.REACT_APP_API_URL}/api/user/${formdata.id}`, formdata);
     toast.success("Customer details updated 💐");
     getData();
     document.querySelector(".btn-close").click();

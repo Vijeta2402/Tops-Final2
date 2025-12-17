@@ -62,17 +62,15 @@ function SignUp() {
     if (validate()) {
       try {
         // Check if user already exists
-        const existing = await axios.get(
-          `/api/user?email=${formdata.email}`
-        );
-
+       const existing = await axios.get(
+      `${process.env.REACT_APP_API_URL}/api/user?email=${formdata.email}`);
         if (existing.data.length > 0) {
           toast.error("Email already registered");
           return;
         }
 
         // Register new user
-        const res = await axios.post("/api/user", formdata);
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/user`, formdata);
         swal("Welcome!", "Registration Successful 💕", "success");
         navigate("/Sign-In");
       } catch (error) {

@@ -14,8 +14,7 @@ function User_Profile() {
   const getData = async () => {
     try {
       const res = await axios.get(
-        `/api/user/${localStorage.getItem("u_id")}` 
-      );
+     `${process.env.REACT_APP_API_URL}/api/user/${localStorage.getItem("u_id")}`);
       console.log(res.data);
       setUser(res.data);
     } catch (error) {

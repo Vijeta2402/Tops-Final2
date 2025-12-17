@@ -35,7 +35,7 @@ function Add_categories() {
         e.preventDefault();
         if(validation())
         {
-          const res = await axios.post(`/api/categories`, formdata);
+          const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/categories`, formdata);
             swal("Good job!", "Category added Success!", "success");
             setFormdata({ ...formdata, cate_name: "", cate_image: ""});
       }

@@ -19,7 +19,7 @@ function Manage_categories() {
 
   const getdata = async () => {
     try {
-      const res = await axios.get('/api/categories');
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/categories`);
       setPackages(res.data);
     } catch (error) {
       toast.error('Failed to load categories');
@@ -36,7 +36,7 @@ function Manage_categories() {
     }).then(async (willDelete) => {
       if (willDelete) {
         try {
-          await axios.delete(`/api/categories/${id}`);
+          await axios.delete(`${process.env.REACT_APP_API_URL}/api/categories/${id}`);
           toast.success('Deleted successfully');
           getdata();
         } catch (error) {
@@ -47,7 +47,7 @@ function Manage_categories() {
   };
 
   const editPackage = async (id) => {
-    const res = await axios.get(`/api/categories/${id}`);
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/categories/${id}`);
     setFormdata(res.data);
   };
 
@@ -61,7 +61,7 @@ function Manage_categories() {
       toast.error('All fields are required');
       return;
     }
-    await axios.patch(`/api/categories/${formdata.id}`, formdata);
+    await axios.patch(`${process.env.REACT_APP_API_URL}/api/categories/${formdata.id}`, formdata);
     swal("Success!", "Category updated successfully!", "success");
     getdata();
   };

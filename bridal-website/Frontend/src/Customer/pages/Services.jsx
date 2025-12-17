@@ -15,7 +15,7 @@ function Services() {
   // Fetch categories (e.g., Bridal, Reception, Mehndi)
   const getCategories = async () => {
     try {
-      const res = await axios.get("/api/categories");
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/categories`);
       setCategories(res.data);
     } catch (err) {
       console.error("Error fetching categories:", err);
@@ -25,7 +25,7 @@ function Services() {
   // Fetch makeup packages
   const getPackages = async () => {
     try {
-      const res = await axios.get("/api/properties"); // using same JSON
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/properties`); // using same JSON
       setPackages(res.data);
     } catch (err) {
       console.error("Error fetching packages:", err);
