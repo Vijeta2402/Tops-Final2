@@ -243,19 +243,19 @@ function About() {
               <div className="col-md-12">
                 <div className="owl-clients owl-carousel">
                   <div className="clients-item">
-                    <img src="assets/images/clients-01.png" alt={1} />
+                    <img src="assets/images/client-01.png" alt={1} />
                   </div>
                   <div className="clients-item">
-                    <img src="assets/images/clients-02.jpg" alt={2} />
+                    <img src="assets/images/client-02.png" alt={2} />
                   </div>
                   <div className="clients-item">
-                    <img src="assets/images/clients-03.jpg" alt={3} />
+                    <img src="assets/images/client-03.png" alt={3} />
                   </div>
                   <div className="clients-item">
-                    <img src="assets/images/clients-04.jpg" alt={4} />
+                    <img src="assets/images/client-04.png" alt={4} />
                   </div>
                   <div className="clients-item">
-                    <img src="assets/images/clients-05.jpg" alt={5} />
+                    <img src="assets/images/client-05.png" alt={5} />
                   </div>
                   
                 </div>
