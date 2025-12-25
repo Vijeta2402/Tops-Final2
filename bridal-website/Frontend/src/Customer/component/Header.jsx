@@ -14,7 +14,7 @@ function Header() {
     }
     return (
         <div>
-            {/* ***** Preloader Start ***** */} 
+            {/* ***** Preloader Start ***** */}
 
             {/* ***** Preloader End ***** */}
             <div className="sub-header">
@@ -67,37 +67,33 @@ function Header() {
                                     <NavLink to="/services" className="nav-link">Services</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink to="/makeup-details" className="nav-link">MakeUp Details</NavLink>
-                                </li>
-                                <li className="nav-item">
                                     <NavLink to="/about" className="nav-link">About Us</NavLink>
                                 </li>
-                                
+
                                 <li className="nav-item">
                                     <NavLink to="/contact" className="nav-link">Contact Us</NavLink>
                                 </li>
                                 {(() => {
-                                        if (localStorage.getItem('u_id')) {
-                                            return (
+                                    if (localStorage.getItem('u_id')) {
+                                        return (
                                             <li className="nav-item">
                                                 <a href="" onClick={logout} className="w-100 h-50 p-1 nav-link"> Logout</a>
                                             </li>
-                                            )
-                                        }
-                                        else
-                                        {
-                                            return(
+                                        )
+                                    }
+                                    else {
+                                        return (
                                             <li className="nav-item">
-                                               <NavLink to="/Sign-In" className="nav-link"> 
-                                               <span className='fa fa-user'></span> Login
-                                               </NavLink>
+                                                <NavLink to="/Sign-In" className="nav-link">
+                                                    <span className='fa fa-user'></span> Login
+                                                </NavLink>
                                             </li>
-                                            )
-                                        }
+                                        )
+                                    }
                                 })()}
                             </ul>
 
-                           
+
                         </div>
                     </div>
                 </nav>

@@ -1,5 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Navigate } from "react-router-dom";
+
 import Index from './Customer/pages/Index'
 import Header from './Customer/component/Header'
 import Footer from './Customer/component/Footer'
@@ -35,38 +37,44 @@ function App() {
       <BrowserRouter>
         <ToastContainer> </ToastContainer>
         <Routes>
-          <Route path="/" element={<><Header /><Index /><Footer /></>}></Route>
-         
-          <Route path="/makeup-details/:id" element={<><Header /><Makeup_details /><Footer /></>}></Route>
-          <Route path="services" element={<><Header /><Services /><Footer /></>}></Route>
-          <Route path="/about" element={<><Header /><About /><Footer /></>}></Route>
-          <Route path="/contact" element={<><Header /><Contact /><Footer /></>}></Route>
+
+          <Route path="/" element={<><Header /><Index /><Footer /></>} />
+
+          <Route path="/services" element={<><Header /><Services /><Footer /></>} />
+
+          <Route path="/makeup-details/:id" element={<><Header /><Makeup_details /><Footer /></>} />
+
+          <Route path="/makeup-details" element={<Navigate to="/services" />} />
+
+          <Route path="/about" element={<><Header /><About /><Footer /></>} />
+          <Route path="/contact" element={<><Header /><Contact /><Footer /></>} />
 
 
-          <Route element={<User_after_auth/>}>
-            <Route path="/user_profile" element={<> <Header/> <User_Profile/> <Footer/></>}></Route>
-            <Route path="/edit_profile/:id" element={<> <Header/> <Edit_profile/> <Footer/></>}></Route>
+          <Route element={<User_after_auth />}>
+
+            <Route path="/user_profile" element={<> <Header /> <User_Profile /> <Footer /></>}></Route>
+            <Route path="/edit_profile/:id" element={<> <Header /> <Edit_profile /> <Footer /></>}></Route>
           </Route>
 
-         
-          
 
-          <Route element={<User_before_auth/>}>
-              <Route path="/Sign-In" element={<><Header /><SignIn /><Footer /></>}></Route>
-              <Route path="/signup" element={<><Header /><SignUp /><Footer /></>}></Route>
+
+
+          <Route element={<User_before_auth />}>
+            <Route path="/Sign-In" element={<><Header /><SignIn /><Footer /></>}></Route>
+            <Route path="/signup" element={<><Header /><SignUp /><Footer /></>}></Route>
           </Route>
-  
+
           {/* Admin Routes */}
-          <Route path="/admin_login" element={<>  <Admin_login/></>}></Route>  
+          <Route path="/admin_login" element={<>  <Admin_login /></>}></Route>
 
-          <Route element={<Admin_authantic/>}>
-                <Route path="/dashboard" element={<><AHeader/><AdminLayout><Dashboard/></AdminLayout></>} />
-                <Route path="/add_categories" element={<><AHeader/><AdminLayout><Add_categories /></AdminLayout></>} />
-                <Route path="/manage_categories" element={<><AHeader/><AdminLayout><Manage_categories /></AdminLayout></>} />
-                <Route path="/add_properties" element={<><AHeader/><AdminLayout><Add_properties /></AdminLayout></>} />
-                <Route path="/manage_properties" element={<><AHeader/><AdminLayout><Manage_properties /></AdminLayout></>} /> 
-                <Route path="/manage_customer" element={<><AHeader/><AdminLayout><Manage_customer /></AdminLayout></>} />
-                <Route path="/manage_booking" element={<><AHeader/><AdminLayout><Manage_Booking/></AdminLayout></>} />
+          <Route element={<Admin_authantic />}>
+            <Route path="/dashboard" element={<><AHeader /><AdminLayout><Dashboard /></AdminLayout></>} />
+            <Route path="/add_categories" element={<><AHeader /><AdminLayout><Add_categories /></AdminLayout></>} />
+            <Route path="/manage_categories" element={<><AHeader /><AdminLayout><Manage_categories /></AdminLayout></>} />
+            <Route path="/add_properties" element={<><AHeader /><AdminLayout><Add_properties /></AdminLayout></>} />
+            <Route path="/manage_properties" element={<><AHeader /><AdminLayout><Manage_properties /></AdminLayout></>} />
+            <Route path="/manage_customer" element={<><AHeader /><AdminLayout><Manage_customer /></AdminLayout></>} />
+            <Route path="/manage_booking" element={<><AHeader /><AdminLayout><Manage_Booking /></AdminLayout></>} />
           </Route>
         </Routes>
       </BrowserRouter>

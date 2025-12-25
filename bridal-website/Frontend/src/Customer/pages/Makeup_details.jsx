@@ -9,7 +9,6 @@ function Makeup_details() {
   const navigate = useNavigate();
   const [makeup, setMakeup] = useState(null);
 
-  // Form state
   const [customerName, setCustomerName] = useState("");
   const [appointmentDate, setAppointmentDate] = useState("");
   const [appointmentDay, setAppointmentDay] = useState("");
@@ -20,24 +19,34 @@ function Makeup_details() {
 
   const getMakeupDetails = async () => {
     try {
-    const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/properties/${id}`);
-
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/properties/${id}`);
       setMakeup(res.data);
     } catch (err) {
-      console.error("Error fetching makeup details:", err);
+      console.error(err);
       toast.error("Failed to load makeup details");
     }
   };
 
   const handleBookAppointment = async (e) => {
-    e.preventDefault(); // prevent page reload
+    e.preventDefault();
+
+    // 🔐 Login check
+    const userId = localStorage.getItem("u_id");
+    if (!userId) {
+      toast.warning("Please login to book an appointment");
+      navigate("/Sign-In");
+      return;
+    }
+
+    // ❗ Form validation
     if (!customerName || !appointmentDate || !appointmentDay) {
       toast.error("All fields are required!");
-      return;
+      return; // ⛔ STOP here, page stays
     }
 
     const bookingData = {
       id: Date.now(),
+      user_id: userId,
       customer_name: customerName,
       package_id: makeup.id,
       service: makeup.package_name,
@@ -50,27 +59,21 @@ function Makeup_details() {
     try {
       await axios.post(`${process.env.REACT_APP_API_URL}/api/Bookings`, bookingData);
       toast.success("Appointment booked successfully!");
-      navigate("/services");
+      navigate("/services"); // ✅ only on success
     } catch (err) {
       console.error(err);
       toast.error("Error while booking appointment");
     }
   };
 
-  if (!makeup) {
-    return <p className="text-center mt-5">Loading details...</p>;
-  }
+  if (!makeup) return <p className="text-center mt-5">Loading details...</p>;
 
   return (
     <div className="container mt-5 mb-5">
       <div className="card shadow p-4">
         <div className="row align-items-center">
           <div className="col-md-5">
-            <img
-              src={makeup.package_image}
-              alt={makeup.package_name}
-              className="img-fluid rounded"
-            />
+            <img src={makeup.package_image} alt={makeup.package_name} className="img-fluid rounded" />
           </div>
           <div className="col-md-7">
             <h3>{makeup.package_name}</h3>
@@ -78,7 +81,6 @@ function Makeup_details() {
             <p><b>Duration:</b> {makeup.duration}</p>
             <h5>Price: ₹{makeup.price}</h5>
 
-            {/* Booking Form */}
             <form className="mt-3" onSubmit={handleBookAppointment}>
               <div className="mb-2">
                 <input
@@ -87,7 +89,6 @@ function Makeup_details() {
                   placeholder="Full Name"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
-                  required
                 />
               </div>
               <div className="mb-2">
@@ -96,7 +97,6 @@ function Makeup_details() {
                   className="form-control"
                   value={appointmentDate}
                   onChange={(e) => setAppointmentDate(e.target.value)}
-                  required
                 />
               </div>
               <div className="mb-2">
@@ -106,13 +106,9 @@ function Makeup_details() {
                   placeholder="Day (e.g. Monday)"
                   value={appointmentDay}
                   onChange={(e) => setAppointmentDay(e.target.value)}
-                  required
                 />
               </div>
-              <button
-                type="submit"
-                className="btn btn-danger w-100"
-              >
+              <button type="submit" className="btn btn-danger w-100">
                 Book Appointment
               </button>
             </form>
@@ -124,3 +120,4 @@ function Makeup_details() {
 }
 
 export default Makeup_details;
+
