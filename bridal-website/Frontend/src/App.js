@@ -1,11 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navigate } from "react-router-dom";
-
 import Index from './Customer/pages/Index'
 import Header from './Customer/component/Header'
 import Footer from './Customer/component/Footer'
-
 import SignIn from './Customer/pages/SignIn'
 import SignUp from './Customer/pages/SignUp'
 import About from './Customer/pages/About'
@@ -55,10 +53,7 @@ function App() {
             <Route path="/user_profile" element={<> <Header /> <User_Profile /> <Footer /></>}></Route>
             <Route path="/edit_profile/:id" element={<> <Header /> <Edit_profile /> <Footer /></>}></Route>
           </Route>
-
-
-
-
+          
           <Route element={<User_before_auth />}>
             <Route path="/Sign-In" element={<><Header /><SignIn /><Footer /></>}></Route>
             <Route path="/signup" element={<><Header /><SignUp /><Footer /></>}></Route>

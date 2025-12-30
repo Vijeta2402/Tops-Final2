@@ -6,44 +6,63 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Add_categories() {
-  
-    const [formdata, setFormdata] = useState({
+
+  const [formdata, setFormdata] = useState({
+    id: "",
+    cate_name: "",
+    cate_image: ""
+  });
+
+  // ✅ ONLY update field value
+  const changeHandel = (e) => {
+    setFormdata({
+      ...formdata,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  function validation() {
+    let ans = true;
+
+    if (!formdata.cate_name.trim()) {
+      toast.error("Category Name is required");
+      ans = false;
+    }
+
+    if (!formdata.cate_image.trim()) {
+      toast.error("Category Image URL is required");
+      ans = false;
+    }
+
+    return ans;
+  }
+
+  const submitHandel = async (e) => {
+    e.preventDefault();
+
+    if (validation()) {
+      const payload = {
+        ...formdata,
+        id: new Date().getTime().toString() // ✅ generate ID here ONLY
+      };
+
+      await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/categories`,
+        payload
+      );
+
+      swal("Good job!", "Category added successfully!", "success");
+
+      setFormdata({
         id: "",
         cate_name: "",
         cate_image: ""
-    });
-
-    const changeHandel = (e) => {
-        setFormdata({ ...formdata, id: new Date().getTime().toString(), [e.target.name]: e.target.value });
-        console.log(formdata);
+      });
     }
-
-    function validation() {
-            let ans = true;
-            if (formdata.cate_name == "") {
-                toast.error('Category Name Field is required');
-                ans = false;
-            }    
-            if (formdata.cate_image == "") {
-                toast.error('Category Image URL Field is required');
-                ans = false;
-            }
-           
-            return ans;
-        }
-    const submitHandel = async (e) => {
-        e.preventDefault();
-        if(validation())
-        {
-          const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/categories`, formdata);
-            swal("Good job!", "Category added Success!", "success");
-            setFormdata({ ...formdata, cate_name: "", cate_image: ""});
-      }
-    }
+  };
 
   return (
     <div className="container py-5">
-      {/* Page Heading */}
       <div className="text-center mb-5">
         <h2 className="fw-bold" style={{ color: "#e72e77" }}>
           <i className="bi bi-tags-fill me-2"></i> Add New Category
@@ -55,30 +74,33 @@ function Add_categories() {
 
       <div className="row justify-content-center">
         <div className="col-lg-6">
-          {/* Card */}
           <div className="card shadow-lg border-0 rounded-4">
             <div className="card-body p-4">
-             <form method="post" onSubmit={submitHandel}>
-                {/* Category Name */}
+              <form onSubmit={submitHandel}>
                 <div className="form-floating mb-4">
-                  <input  type="text" onChange={changeHandel} value={formdata.cate_name} className="form-control"  placeholder="Enter Categories Name" name="cate_name" />
-                 <label htmlFor="email">Categories Name</label>
+                  <input
+                    type="text"
+                    name="cate_name"
+                    value={formdata.cate_name}
+                    onChange={changeHandel}
+                    className="form-control"
+                    placeholder="Category Name"
+                  />
+                  <label>Category Name</label>
                 </div>
 
-                {/* Category Image */}
                 <div className="form-floating mb-4">
                   <input
                     type="url"
-                    onChange={changeHandel}
-                    value={formdata.cate_image}
-                    className="form-control rounded-3"
-                    placeholder="Enter Category Image URL"
                     name="cate_image"
+                    value={formdata.cate_image}
+                    onChange={changeHandel}
+                    className="form-control"
+                    placeholder="Image URL"
                   />
-                 <label htmlFor="pwd">Categories URL</label>
+                  <label>Category Image URL</label>
                 </div>
 
-                {/* Preview Image */}
                 {formdata.cate_image && (
                   <div className="text-center mb-4">
                     <img
@@ -90,8 +112,8 @@ function Add_categories() {
                   </div>
                 )}
 
-                {/* Submit Button */}
-                <button type="submit"
+                <button
+                  type="submit"
                   className="w-100 rounded-pill py-2"
                   style={{
                     backgroundColor: "#e72e77",
